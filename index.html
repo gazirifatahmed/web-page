@@ -395,6 +395,8 @@
             transition: all 0.3s;
             border: none;
             box-shadow: 0 4px 12px rgba(79,70,229,0.3);
+            text-decoration: none;
+            cursor: pointer;
         }
         .btn-demo:hover { background: linear-gradient(135deg, #3730a3, #4f46e5); color: #fff; transform: translateY(-2px); }
         .btn-code {
@@ -406,6 +408,7 @@
             font-weight: 500;
             transition: all 0.3s;
             background: transparent;
+            text-decoration: none;
         }
         .btn-code:hover { background: #f1f5f9; border-color: #cbd5e1; transform: translateY(-2px); }
 
@@ -542,6 +545,23 @@
         </div>
     </div>
 
+    <!-- Video Demo Modal -->
+    <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content bg-dark rounded-4">
+                <div class="modal-header border-0">
+                    <h6 class="modal-title text-white" id="videoModalLabel">Project Demo</h6>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-0">
+                    <div class="ratio ratio-16x9">
+                        <iframe id="videoFrame" src="" title="Project Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- About -->
     <section id="about">
         <div class="container">
@@ -618,11 +638,83 @@
             <div class="section-divider"></div>
             <p class="text-center text-muted mt-3">5-7 real projects — Islamic apps, Food Ordering, Habit Tracker & more.</p>
             <div class="row g-4 mt-4">
-                <div class="col-md-6 col-lg-4"><div class="project-card"><img src="https://via.placeholder.com/400x200/4f46e5/ffffff?text=Tasbi+%26+Zikir" alt="Tasbi" loading="lazy" /><div class="project-body"><h5>Tasbi & Zikir App</h5><p class="text-muted small">Islamic counter app. Android/Flutter.</p><div class="mt-auto d-flex gap-2"><a href="#" class="btn-demo btn btn-sm"><i class="fas fa-play"></i> Demo</a><a href="#" class="btn-code btn btn-sm"><i class="fab fa-github"></i> Code</a></div></div></div></div>
-                <div class="col-md-6 col-lg-4"><div class="project-card"><img src="https://via.placeholder.com/400x200/06b6d4/ffffff?text=Food+Order" alt="Food" loading="lazy" /><div class="project-body"><h5>Online Food Order</h5><p class="text-muted small">Spring Boot & Bootstrap.</p><div class="mt-auto d-flex gap-2"><a href="#" class="btn-demo btn btn-sm"><i class="fas fa-play"></i> Demo</a><a href="#" class="btn-code btn btn-sm"><i class="fab fa-github"></i> Code</a></div></div></div></div>
-                <div class="col-md-6 col-lg-4"><div class="project-card"><img src="https://via.placeholder.com/400x200/ef4444/ffffff?text=Habit+Tracker" alt="Habit" loading="lazy" /><div class="project-body"><h5>Habit Tracker</h5><p class="text-muted small">Android + Firebase.</p><div class="mt-auto d-flex gap-2"><a href="#" class="btn-demo btn btn-sm"><i class="fas fa-play"></i> Demo</a><a href="#" class="btn-code btn btn-sm"><i class="fab fa-github"></i> Code</a></div></div></div></div>
-                <div class="col-md-6 col-lg-4"><div class="project-card"><img src="https://via.placeholder.com/400x200/10b981/ffffff?text=Salat+%26+Rasul" alt="Salat" loading="lazy" /><div class="project-body"><h5>Salat Time & Rasul</h5><p class="text-muted small">Prayer reminder. Flutter.</p><div class="mt-auto d-flex gap-2"><a href="#" class="btn-demo btn btn-sm"><i class="fas fa-play"></i> Demo</a><a href="#" class="btn-code btn btn-sm"><i class="fab fa-github"></i> Code</a></div></div></div></div>
-                <div class="col-md-6 col-lg-4"><div class="project-card"><img src="https://via.placeholder.com/400x200/f59e0b/ffffff?text=Portfolio+Site" alt="Portfolio" loading="lazy" /><div class="project-body"><h5>Portfolio Website</h5><p class="text-muted small">HTML, CSS, Bootstrap, Firebase.</p><div class="mt-auto d-flex gap-2"><a href="https://github.com/gazirifatahmed" class="btn-code btn btn-sm"><i class="fab fa-github"></i> Code</a></div></div></div></div>
+                <!-- Tasbi & Zikir App -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="project-card">
+                        <img src="https://via.placeholder.com/400x200/4f46e5/ffffff?text=Tasbi+%26+Zikir" alt="Tasbi" loading="lazy" />
+                        <div class="project-body">
+                            <h5>Tasbi & Zikir App</h5>
+                            <p class="text-muted small">Islamic counter app. Android/Flutter.</p>
+                            <div class="mt-auto d-flex gap-2">
+                                <button class="btn-demo btn btn-sm" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="https://www.youtube.com/shorts/ENryf4DsVBQ">
+                                    <i class="fas fa-play"></i> Demo
+                                </button>
+                                <a href="#" class="btn-code btn btn-sm"><i class="fab fa-github"></i> Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Online Food Order -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="project-card">
+                        <img src="https://via.placeholder.com/400x200/06b6d4/ffffff?text=Food+Order" alt="Food" loading="lazy" />
+                        <div class="project-body">
+                            <h5>Online Food Order</h5>
+                            <p class="text-muted small">Spring Boot & Bootstrap.</p>
+                            <div class="mt-auto d-flex gap-2">
+                                <button class="btn-demo btn btn-sm" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="#">
+                                    <i class="fas fa-play"></i> Demo
+                                </button>
+                                <a href="#" class="btn-code btn btn-sm"><i class="fab fa-github"></i> Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Habit Tracker -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="project-card">
+                        <img src="https://via.placeholder.com/400x200/ef4444/ffffff?text=Habit+Tracker" alt="Habit" loading="lazy" />
+                        <div class="project-body">
+                            <h5>Habit Tracker</h5>
+                            <p class="text-muted small">Android + Firebase.</p>
+                            <div class="mt-auto d-flex gap-2">
+                                <button class="btn-demo btn btn-sm" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="#">
+                                    <i class="fas fa-play"></i> Demo
+                                </button>
+                                <a href="#" class="btn-code btn btn-sm"><i class="fab fa-github"></i> Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Salat Time & Rasul -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="project-card">
+                        <img src="https://via.placeholder.com/400x200/10b981/ffffff?text=Salat+%26+Rasul" alt="Salat" loading="lazy" />
+                        <div class="project-body">
+                            <h5>Salat Time & Rasul</h5>
+                            <p class="text-muted small">Prayer reminder. Flutter.</p>
+                            <div class="mt-auto d-flex gap-2">
+                                <button class="btn-demo btn btn-sm" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="#">
+                                    <i class="fas fa-play"></i> Demo
+                                </button>
+                                <a href="#" class="btn-code btn btn-sm"><i class="fab fa-github"></i> Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Portfolio Website -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="project-card">
+                        <img src="https://via.placeholder.com/400x200/f59e0b/ffffff?text=Portfolio+Site" alt="Portfolio" loading="lazy" />
+                        <div class="project-body">
+                            <h5>Portfolio Website</h5>
+                            <p class="text-muted small">HTML, CSS, Bootstrap, Firebase.</p>
+                            <div class="mt-auto d-flex gap-2">
+                                <a href="https://github.com/gazirifatahmed" class="btn-code btn btn-sm"><i class="fab fa-github"></i> Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -692,7 +784,6 @@
             const email = document.getElementById('email').value.trim();
             const message = document.getElementById('message').value.trim();
 
-            // Show loading popup
             Swal.fire({
                 title: 'Sending...',
                 text: 'Please wait a moment',
@@ -709,7 +800,6 @@
                     message: message,
                     timestamp: new Date()
                 });
-                // Success popup
                 Swal.fire({
                     icon: 'success',
                     title: 'Message Sent Successfully!',
@@ -726,7 +816,6 @@
                 this.reset();
             } catch (error) {
                 console.error(error);
-                // Error popup
                 Swal.fire({
                     icon: 'error',
                     title: 'Oops...',
@@ -737,6 +826,31 @@
                     borderRadius: '16px'
                 });
             }
+        });
+    </script>
+
+    <!-- Video Modal Script -->
+    <script>
+        const videoModal = document.getElementById('videoModal');
+        const videoFrame = document.getElementById('videoFrame');
+
+        videoModal.addEventListener('show.bs.modal', function(event) {
+            const triggerButton = event.relatedTarget;
+            const videoUrl = triggerButton.getAttribute('data-video');
+            if (videoUrl && videoUrl !== '#') {
+                let videoId = '';
+                if (videoUrl.includes('shorts/')) {
+                    videoId = videoUrl.split('shorts/')[1]?.split('?')[0];
+                } else if (videoUrl.includes('watch?v=')) {
+                    videoId = videoUrl.split('v=')[1]?.split('&')[0];
+                }
+                const embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+                videoFrame.src = embedUrl;
+            }
+        });
+
+        videoModal.addEventListener('hidden.bs.modal', function() {
+            videoFrame.src = '';
         });
     </script>
 
