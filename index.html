@@ -26,6 +26,8 @@
             --shadow-lg: 0 20px 40px rgba(0,0,0,0.1);
             --gradient-1: linear-gradient(135deg, #0f0c29 0%, #1a1040 30%, #302b63 70%, #24243e 100%);
             --gradient-2: linear-gradient(135deg, #4f46e5 0%, #06b6d4 100%);
+            --success: #10b981;
+            --danger: #ef4444;
         }
 
         * { box-sizing: border-box; }
@@ -386,6 +388,40 @@
         }
         .btn-submit:hover { box-shadow: 0 12px 35px rgba(6,182,212,0.5); transform: translateY(-3px); }
 
+        /* ==================== PROFESSIONAL ALERT BOX ==================== */
+        .form-status-card {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            padding: 18px 24px;
+            border-radius: 16px;
+            font-weight: 500;
+            font-size: 1.05rem;
+            letter-spacing: 0.3px;
+            margin-top: 24px;
+            animation: fadeSlideIn 0.5s ease forwards;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .form-status-card i {
+            font-size: 1.7rem;
+        }
+        .form-status-card.success {
+            display: flex;
+            background: linear-gradient(135deg, #065f46, #10b981);
+            color: #ffffff;
+        }
+        .form-status-card.error {
+            display: flex;
+            background: linear-gradient(135deg, #991b1b, #ef4444);
+            color: #ffffff;
+        }
+        @keyframes fadeSlideIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         footer { background: #0a0a1a; color: #94a3b8; padding: 45px 0 25px; text-align: center; }
         .social-icons a {
             display: inline-flex;
@@ -411,6 +447,7 @@
             .ring-inner { width: 176px; height: 176px; top: -6px; left: -6px; }
             section { padding: 55px 0; }
             .section-title { font-size: 1.8rem; }
+            .form-status-card { font-size: 0.95rem; padding: 14px 18px; }
         }
     </style>
 </head>
@@ -576,7 +613,8 @@
                     <div class="mb-3"><textarea id="message" class="form-control" rows="5" placeholder="Your Message" required></textarea></div>
                     <button type="submit" class="btn-submit"><i class="fas fa-paper-plane"></i> Send Message</button>
                 </form>
-                <div id="formStatus" class="text-center mt-3 fw-semibold"></div>
+                <!-- Professional Alert Box -->
+                <div id="formStatus" class="form-status-card mt-4"></div>
             </div>
         </div>
     </div>
@@ -597,7 +635,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- 🔥 নতুন Firebase কনফিগ (my-website-intregate) -->
+<!-- Firebase (my-website-intregate) -->
 <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
     import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js";
@@ -615,23 +653,31 @@
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
 
-    document.getElementById('contactForm').addEventListener('submit', async function(e) {
+    const contactForm = document.getElementById('contactForm');
+    const statusDiv = document.getElementById('formStatus');
+
+    contactForm.addEventListener('submit', async function(e) {
         e.preventDefault();
         const name = document.getElementById('name').value.trim();
         const email = document.getElementById('email').value.trim();
         const message = document.getElementById('message').value.trim();
-        const statusDiv = document.getElementById('formStatus');
+
+        // Reset any previous class
+        statusDiv.className = 'form-status-card';
+        statusDiv.innerHTML = '';
 
         try {
             await addDoc(collection(db, "contacts"), {
                 name, email, message,
                 timestamp: new Date()
             });
-            statusDiv.innerHTML = '<span class="text-success">✅ Message sent successfully!</span>';
-            this.reset();
+            statusDiv.classList.add('success');
+            statusDiv.innerHTML = '<i class="fas fa-check-circle"></i> Message sent successfully!';
+            contactForm.reset();
         } catch (error) {
             console.error(error);
-            statusDiv.innerHTML = '<span class="text-danger">❌ Something went wrong. Try again.</span>';
+            statusDiv.classList.add('error');
+            statusDiv.innerHTML = '<i class="fas fa-times-circle"></i> Something went wrong. Try again.';
         }
     });
 </script>
