@@ -162,8 +162,7 @@
         .btn-demo:hover { background: linear-gradient(135deg, #3730a3, #4f46e5); transform: translateY(-2px); box-shadow: 0 6px 18px rgba(79,70,229,0.5); }
         .btn-code { border: 1.5px solid var(--border); color: var(--text); border-radius: 30px; padding: 8px 20px; font-size: 0.88rem; font-weight: 500; transition: all 0.3s; background: transparent; }
         .btn-code:hover { background: #f1f5f9; border-color: #cbd5e1; transform: translateY(-2px); }
-        
-        /* Play Store Button */
+
         .btn-playstore {
             background: linear-gradient(135deg, #0f9d58, #34a853); color: #fff; border-radius: 30px;
             padding: 8px 20px; font-size: 0.88rem; font-weight: 500; transition: all 0.3s; border: none;
@@ -191,7 +190,6 @@
         }
         .social-icons a:hover { background: var(--accent); color: #000; transform: translateY(-5px); box-shadow: 0 10px 25px rgba(6,182,212,0.4); border-color: transparent; }
 
-        /* Video Modal */
         #videoModal .modal-dialog { max-width: 380px; display: flex; align-items: center; justify-content: center; }
         #videoModal .modal-content { background: transparent; border: none; box-shadow: none; }
         .phone-frame {
@@ -204,7 +202,7 @@
         }
         .phone-screen iframe { width: 100%; height: 100%; border: none; }
         .phone-notch { width: 80px; height: 4px; background: #333; border-radius: 4px; margin: 0 auto 8px; }
-        
+
         @media (max-width: 768px) {
             .hero { padding: 130px 0 80px; }
             .hero h1 { font-size: 2.2rem; }
@@ -261,7 +259,6 @@
         </div>
     </header>
 
-    <!-- Contact Modal -->
     <div class="modal fade" id="contactModal" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content rounded-4 border-0 shadow-lg">
@@ -282,7 +279,6 @@
         </div>
     </div>
 
-    <!-- Video Modal -->
     <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -367,18 +363,86 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
+    <!-- ==================== PROJECTS SECTION ==================== -->
     <section id="projects" style="background:#ffffff;">
         <div class="container">
             <h2 class="section-title">My <span>Projects</span></h2>
             <div class="section-divider"></div>
-            <p class="text-center text-muted mt-3">5-7 real projects — Islamic apps, Food Ordering, Habit Tracker & more.</p>
+            <p class="text-center text-muted mt-3">Flutter, Firebase, Android & Web — real-world mobile applications</p>
             <div class="row g-4 mt-4">
-                
-                <!-- Tasbi & Zikir App -->
+
+                <!-- 1. Coffee Shop Order -->
                 <div class="col-md-6 col-lg-4">
                     <div class="project-card">
-                        <img src="image/tasbi image.png" alt="Tasbi & Zikir App" loading="lazy" />
+                        <img src="image/Coffeshop.png" alt="Coffee Shop Order" loading="lazy" />
+                        <div class="project-body">
+                            <h5>QuickBrew ☕</h5>
+                            <p class="text-muted small">Flash coffee ordering with discounts. Flutter + Firebase.</p>
+                            <div class="mt-auto d-flex gap-2">
+                                <a href="#" class="btn-demo btn btn-sm" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="YOUR_COFFEE_VIDEO_ID">
+                                    <i class="fas fa-play"></i> Demo
+                                </a>
+                                <a href="#" class="btn-playstore btn btn-sm"><i class="fab fa-google-play"></i> Install</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Book Library -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="project-card">
+                        <img src="image/Book.png" alt="Book Library" loading="lazy" />
+                        <div class="project-body">
+                            <h5>BanglaReads 📚</h5>
+                            <p class="text-muted small">Curated library of famous Bangladeshi books. Flutter + Firebase.</p>
+                            <div class="mt-auto d-flex gap-2">
+                                <a href="#" class="btn-demo btn btn-sm" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="YOUR_BOOK_VIDEO_ID">
+                                    <i class="fas fa-play"></i> Demo
+                                </a>
+                                <a href="#" class="btn-playstore btn btn-sm"><i class="fab fa-google-play"></i> Install</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. ChatBox Messenger -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="project-card">
+                        <img src="image/Chat box.png" alt="ChatBox Messenger" loading="lazy" />
+                        <div class="project-body">
+                            <h5>ChatBox 💬</h5>
+                            <p class="text-muted small">Real-time chat, call & media sharing. Flutter + Firebase.</p>
+                            <div class="mt-auto d-flex gap-2">
+                                <a href="#" class="btn-demo btn btn-sm" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="YOUR_CHATBOX_VIDEO_ID">
+                                    <i class="fas fa-play"></i> Demo
+                                </a>
+                                <a href="#" class="btn-playstore btn btn-sm"><i class="fab fa-google-play"></i> Install</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. MCQ Generator -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="project-card">
+                        <img src="image/Mcq.png" alt="MCQ Generator" loading="lazy" />
+                        <div class="project-body">
+                            <h5>QuizCraft 🧠</h5>
+                            <p class="text-muted small">Auto-generate MCQs from documents. Flutter + Firebase.</p>
+                            <div class="mt-auto d-flex gap-2">
+                                <a href="#" class="btn-demo btn btn-sm" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="YOUR_MCQ_VIDEO_ID">
+                                    <i class="fas fa-play"></i> Demo
+                                </a>
+                                <a href="#" class="btn-playstore btn btn-sm"><i class="fab fa-google-play"></i> Install</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Tasbi & Zikir -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="project-card">
+                        <img src="image/tasbi image.png" alt="Tasbi & Zikir" loading="lazy" />
                         <div class="project-body">
                             <h5>Tasbi & Zikir App</h5>
                             <p class="text-muted small">Islamic counter app. Android/Flutter.</p>
@@ -386,15 +450,13 @@
                                 <a href="#" class="btn-demo btn btn-sm" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="ENryf4DsVBQ">
                                     <i class="fas fa-play"></i> Demo
                                 </a>
-                                <a href="https://play.google.com/store/apps/details?id=com.yourpackagename" target="_blank" class="btn-playstore btn btn-sm">
-                                    <i class="fab fa-google-play"></i> Install
-                                </a>
+                                <a href="#" class="btn-playstore btn btn-sm"><i class="fab fa-google-play"></i> Install</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Online Food Order -->
+                <!-- 6. Online Food Order -->
                 <div class="col-md-6 col-lg-4">
                     <div class="project-card">
                         <img src="image/Food.png" alt="Online Food Order" loading="lazy" />
@@ -402,7 +464,7 @@
                             <h5>Online Food Order</h5>
                             <p class="text-muted small">Spring Boot & Bootstrap.</p>
                             <div class="mt-auto d-flex gap-2">
-                                <a href="#" class="btn-demo btn btn-sm" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="YOUR_VIDEO_ID">
+                                <a href="#" class="btn-demo btn btn-sm" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="YOUR_FOOD_VIDEO_ID">
                                     <i class="fas fa-play"></i> Demo
                                 </a>
                                 <a href="#" class="btn-code btn btn-sm"><i class="fab fa-github"></i> Code</a>
@@ -411,7 +473,7 @@
                     </div>
                 </div>
 
-                <!-- Habit Tracker -->
+                <!-- 7. Habit Tracker -->
                 <div class="col-md-6 col-lg-4">
                     <div class="project-card">
                         <img src="image/habit.png" alt="Habit Tracker" loading="lazy" />
@@ -419,7 +481,7 @@
                             <h5>Habit Tracker</h5>
                             <p class="text-muted small">Android + Firebase.</p>
                             <div class="mt-auto d-flex gap-2">
-                                <a href="#" class="btn-demo btn btn-sm" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="YOUR_VIDEO_ID">
+                                <a href="#" class="btn-demo btn btn-sm" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="YOUR_HABIT_VIDEO_ID">
                                     <i class="fas fa-play"></i> Demo
                                 </a>
                                 <a href="#" class="btn-code btn btn-sm"><i class="fab fa-github"></i> Code</a>
@@ -428,15 +490,15 @@
                     </div>
                 </div>
 
-                <!-- Salat Time -->
+                <!-- 8. Salat Time -->
                 <div class="col-md-6 col-lg-4">
                     <div class="project-card">
-                        <img src="image/solat.png" alt="Salat Time & Rasul" loading="lazy" />
+                        <img src="image/solat.png" alt="Salat Time" loading="lazy" />
                         <div class="project-body">
                             <h5>Salat Time & Rasul</h5>
                             <p class="text-muted small">Prayer reminder. Flutter.</p>
                             <div class="mt-auto d-flex gap-2">
-                                <a href="#" class="btn-demo btn btn-sm" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="YOUR_VIDEO_ID">
+                                <a href="#" class="btn-demo btn btn-sm" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="YOUR_SALAT_VIDEO_ID">
                                     <i class="fas fa-play"></i> Demo
                                 </a>
                                 <a href="#" class="btn-code btn btn-sm"><i class="fab fa-github"></i> Code</a>
@@ -445,19 +507,6 @@
                     </div>
                 </div>
 
-                <!-- Portfolio -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="project-card">
-                        <img src="https://via.placeholder.com/400x200/f59e0b/ffffff?text=Portfolio+Site" alt="Portfolio Website" loading="lazy" />
-                        <div class="project-body">
-                            <h5>Portfolio Website</h5>
-                            <p class="text-muted small">HTML, CSS, Bootstrap, JS, Firebase.</p>
-                            <div class="mt-auto d-flex gap-2">
-                                <a href="https://github.com/gazirifatahmed" target="_blank" class="btn-code btn btn-sm"><i class="fab fa-github"></i> Code</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
