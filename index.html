@@ -163,6 +163,7 @@
         .btn-code { border: 1.5px solid var(--border); color: var(--text); border-radius: 30px; padding: 8px 20px; font-size: 0.88rem; font-weight: 500; transition: all 0.3s; background: transparent; }
         .btn-code:hover { background: #f1f5f9; border-color: #cbd5e1; transform: translateY(-2px); }
         
+        /* Play Store Button */
         .btn-playstore {
             background: linear-gradient(135deg, #0f9d58, #34a853); color: #fff; border-radius: 30px;
             padding: 8px 20px; font-size: 0.88rem; font-weight: 500; transition: all 0.3s; border: none;
@@ -366,7 +367,7 @@
         </div>
     </section>
 
-    <!-- ==================== PROJECTS SECTION ==================== -->
+    <!-- Projects Section -->
     <section id="projects" style="background:#ffffff;">
         <div class="container">
             <h2 class="section-title">My <span>Projects</span></h2>
@@ -374,7 +375,7 @@
             <p class="text-center text-muted mt-3">5-7 real projects — Islamic apps, Food Ordering, Habit Tracker & more.</p>
             <div class="row g-4 mt-4">
                 
-                <!-- 1. Tasbi & Zikir App -->
+                <!-- Tasbi & Zikir App -->
                 <div class="col-md-6 col-lg-4">
                     <div class="project-card">
                         <img src="image/tasbi image.png" alt="Tasbi & Zikir App" loading="lazy" />
@@ -393,15 +394,15 @@
                     </div>
                 </div>
 
-                <!-- 2. Online Food Order -->
+                <!-- Online Food Order -->
                 <div class="col-md-6 col-lg-4">
                     <div class="project-card">
-                        <img src="image/food.png" alt="Food Order" loading="lazy" />
+                        <img src="image/Food.png" alt="Online Food Order" loading="lazy" />
                         <div class="project-body">
                             <h5>Online Food Order</h5>
                             <p class="text-muted small">Spring Boot & Bootstrap.</p>
                             <div class="mt-auto d-flex gap-2">
-                                <a href="#" class="btn-demo btn btn-sm" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="YOUR_FOOD_VIDEO_ID">
+                                <a href="#" class="btn-demo btn btn-sm" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="YOUR_VIDEO_ID">
                                     <i class="fas fa-play"></i> Demo
                                 </a>
                                 <a href="#" class="btn-code btn btn-sm"><i class="fab fa-github"></i> Code</a>
@@ -410,7 +411,7 @@
                     </div>
                 </div>
 
-                <!-- 3. Habit Tracker -->
+                <!-- Habit Tracker -->
                 <div class="col-md-6 col-lg-4">
                     <div class="project-card">
                         <img src="image/habit.png" alt="Habit Tracker" loading="lazy" />
@@ -418,7 +419,7 @@
                             <h5>Habit Tracker</h5>
                             <p class="text-muted small">Android + Firebase.</p>
                             <div class="mt-auto d-flex gap-2">
-                                <a href="#" class="btn-demo btn btn-sm" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="YOUR_HABIT_VIDEO_ID">
+                                <a href="#" class="btn-demo btn btn-sm" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="YOUR_VIDEO_ID">
                                     <i class="fas fa-play"></i> Demo
                                 </a>
                                 <a href="#" class="btn-code btn btn-sm"><i class="fab fa-github"></i> Code</a>
@@ -427,15 +428,15 @@
                     </div>
                 </div>
 
-                <!-- 4. Salat Time -->
+                <!-- Salat Time -->
                 <div class="col-md-6 col-lg-4">
                     <div class="project-card">
-                        <img src="image/solat.png" alt="Salat Time" loading="lazy" />
+                        <img src="image/solat.png" alt="Salat Time & Rasul" loading="lazy" />
                         <div class="project-body">
                             <h5>Salat Time & Rasul</h5>
                             <p class="text-muted small">Prayer reminder. Flutter.</p>
                             <div class="mt-auto d-flex gap-2">
-                                <a href="#" class="btn-demo btn btn-sm" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="YOUR_SALAT_VIDEO_ID">
+                                <a href="#" class="btn-demo btn btn-sm" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="YOUR_VIDEO_ID">
                                     <i class="fas fa-play"></i> Demo
                                 </a>
                                 <a href="#" class="btn-code btn btn-sm"><i class="fab fa-github"></i> Code</a>
@@ -444,10 +445,10 @@
                     </div>
                 </div>
 
-                <!-- 5. Portfolio -->
+                <!-- Portfolio -->
                 <div class="col-md-6 col-lg-4">
                     <div class="project-card">
-                        <img src="image/portfolio.png" alt="Portfolio" loading="lazy" />
+                        <img src="https://via.placeholder.com/400x200/f59e0b/ffffff?text=Portfolio+Site" alt="Portfolio Website" loading="lazy" />
                         <div class="project-body">
                             <h5>Portfolio Website</h5>
                             <p class="text-muted small">HTML, CSS, Bootstrap, JS, Firebase.</p>
@@ -522,27 +523,58 @@
             const email = document.getElementById('email').value.trim();
             const message = document.getElementById('message').value.trim();
 
-            Swal.fire({ title: 'Sending...', text: 'Please wait', allowOutsideClick: false, didOpen: () => { Swal.showLoading(); } });
+            Swal.fire({
+                title: 'Sending...',
+                text: 'Please wait a moment',
+                allowOutsideClick: false,
+                didOpen: () => { Swal.showLoading(); }
+            });
 
             try {
-                await addDoc(collection(db, "contacts"), { name, email, message, timestamp: new Date() });
-                Swal.fire({ icon: 'success', title: 'Message Sent!', text: 'I will get back to you soon.', confirmButtonColor: '#4f46e5' });
+                await addDoc(collection(db, "contacts"), {
+                    name, email, message,
+                    timestamp: new Date()
+                });
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Message Sent Successfully!',
+                    text: 'Thank you for reaching out. I will get back to you soon.',
+                    confirmButtonText: 'Okay',
+                    confirmButtonColor: '#4f46e5',
+                    background: '#ffffff',
+                    borderRadius: '16px'
+                });
                 this.reset();
             } catch (error) {
-                Swal.fire({ icon: 'error', title: 'Oops...', text: 'Try again later.', confirmButtonColor: '#ef4444' });
+                console.error(error);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Something went wrong. Please try again later.',
+                    confirmButtonText: 'Retry',
+                    confirmButtonColor: '#ef4444'
+                });
             }
         });
     </script>
 
     <script>
-        document.getElementById('videoModal').addEventListener('show.bs.modal', function(e) {
-            const btn = e.relatedTarget;
-            const id = btn.getAttribute('data-video-id');
-            if (id) document.getElementById('videoFrame').src = 'https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0&modestbranding=1&playsinline=1&cc_load_policy=1';
+        const videoModal = document.getElementById('videoModal');
+        const videoFrame = document.getElementById('videoFrame');
+
+        videoModal.addEventListener('show.bs.modal', function(event) {
+            const button = event.relatedTarget;
+            const videoId = button.getAttribute('data-video-id');
+            if (videoId) {
+                const embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1&playsinline=1&cc_load_policy=1`;
+                videoFrame.src = embedUrl;
+            }
         });
-        document.getElementById('videoModal').addEventListener('hidden.bs.modal', function() {
-            document.getElementById('videoFrame').src = '';
+
+        videoModal.addEventListener('hidden.bs.modal', function() {
+            videoFrame.src = '';
         });
     </script>
+
 </body>
 </html>
