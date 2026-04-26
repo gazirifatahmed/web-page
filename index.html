@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Gazi Rifat Ahmed - Software Engineer. Java, Spring Boot, Android, Flutter, Web Developer." />
-    <meta name="keywords" content="Gazi Rifat Ahmed, Software Engineer, Java, Spring Boot, Android, Flutter, Web Developer, Dhaka" />
+    <meta name="keywords" content="Gazi Rifat Ahmed, Software Engineer, portfolio, Java, Android, Flutter" />
     <meta name="author" content="Gazi Rifat Ahmed" />
     <title>Gazi Rifat Ahmed | Software Engineer</title>
 
@@ -149,19 +149,26 @@
         }
         .skill-badge:hover { background: var(--primary); color: #fff; border-color: var(--primary); transform: translateY(-3px); box-shadow: 0 10px 25px rgba(79,70,229,0.3); }
 
+        /* Project Card */
         .project-card { background: var(--card-bg); border-radius: 20px; overflow: hidden; box-shadow: var(--shadow); transition: all 0.4s; border: 1px solid var(--border); height: 100%; display: flex; flex-direction: column; }
         .project-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
-        .project-card img { width: 100%; height: 200px; object-fit: cover; }
+        .project-card img { width: 100%; height: 200px; object-fit: cover; }  /* থাম্বনেল সাইজ: 400x200 প্রোপর্শন */
         .project-body { padding: 22px; flex: 1; display: flex; flex-direction: column; }
         .project-body h5 { font-weight: 600; margin-bottom: 8px; }
+
         .btn-demo {
             background: linear-gradient(135deg, #4f46e5, #6366f1); color: #fff; border-radius: 30px;
             padding: 8px 20px; font-size: 0.88rem; font-weight: 500; transition: all 0.3s; border: none;
-            box-shadow: 0 4px 12px rgba(79,70,229,0.3); cursor: pointer;
+            box-shadow: 0 4px 12px rgba(79,70,229,0.3); cursor: pointer; text-decoration: none; display: inline-block;
         }
         .btn-demo:hover { background: linear-gradient(135deg, #3730a3, #4f46e5); transform: translateY(-2px); box-shadow: 0 6px 18px rgba(79,70,229,0.5); }
-        .btn-code { border: 1.5px solid var(--border); color: var(--text); border-radius: 30px; padding: 8px 20px; font-size: 0.88rem; font-weight: 500; transition: all 0.3s; background: transparent; }
-        .btn-code:hover { background: #f1f5f9; border-color: #cbd5e1; transform: translateY(-2px); }
+
+        .btn-playstore {
+            background: linear-gradient(135deg, #000000, #1a1a1a); color: #fff; border-radius: 30px;
+            padding: 8px 20px; font-size: 0.88rem; font-weight: 500; transition: all 0.3s; border: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3); cursor: pointer; text-decoration: none; display: inline-block;
+        }
+        .btn-playstore:hover { background: linear-gradient(135deg, #000000, #333333); transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,0.5); }
 
         .contact-form input, .contact-form textarea {
             border-radius: 14px; padding: 15px 20px; border: 2px solid var(--border);
@@ -182,51 +189,6 @@
             margin: 0 9px; transition: all 0.3s; border: 1px solid rgba(255,255,255,0.08);
         }
         .social-icons a:hover { background: var(--accent); color: #000; transform: translateY(-5px); box-shadow: 0 10px 25px rgba(6,182,212,0.4); border-color: transparent; }
-
-        /* Mobile Phone Frame Video Modal */
-        #videoModal .modal-dialog {
-            max-width: 380px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        #videoModal .modal-content {
-            background: transparent;
-            border: none;
-            box-shadow: none;
-        }
-        .phone-frame {
-            background: #111;
-            border-radius: 30px;
-            padding: 12px;
-            box-shadow: 0 0 40px rgba(0,0,0,0.8), 0 0 0 2px #333;
-            position: relative;
-            margin: 10px;
-        }
-        .phone-screen {
-            background: #000;
-            border-radius: 22px;
-            overflow: hidden;
-            aspect-ratio: 9 / 16;
-            width: 100%;
-        }
-        .phone-screen iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-        .phone-notch {
-            width: 80px;
-            height: 4px;
-            background: #333;
-            border-radius: 4px;
-            margin: 0 auto 8px;
-        }
-        @media (max-width: 576px) {
-            #videoModal .modal-dialog {
-                max-width: 320px;
-            }
-        }
     </style>
 </head>
 <body>
@@ -289,25 +251,6 @@
                     <a href="tel:01955326596" style="display:block;width:100%;margin:12px 0;border-radius:14px;padding:15px;font-weight:600;text-align:center;background:linear-gradient(135deg, #06b6d4, #22d3ee);color:#000;text-decoration:none;">
                         <i class="fas fa-phone me-2"></i> 01955326596
                     </a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Video Modal with Phone Frame -->
-    <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header border-0 justify-content-end" style="position: absolute; right: 0; z-index: 10; padding: 8px;">
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close" style="filter: drop-shadow(0 0 3px black);"></button>
-                </div>
-                <div class="modal-body p-0">
-                    <div class="phone-frame">
-                        <div class="phone-notch"></div>
-                        <div class="phone-screen">
-                            <iframe id="videoFrame" src="" title="Project Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -385,6 +328,7 @@
             <div class="section-divider"></div>
             <p class="text-center text-muted mt-3">5-7 real projects — Islamic apps, Food Ordering, Habit Tracker & more.</p>
             <div class="row g-4 mt-4">
+                <!-- Tasbi & Zikir -->
                 <div class="col-md-6 col-lg-4">
                     <div class="project-card">
                         <img src="https://via.placeholder.com/400x200/4f46e5/ffffff?text=Tasbi+%26+Zikir" alt="Tasbi" loading="lazy" />
@@ -392,14 +336,17 @@
                             <h5>Tasbi & Zikir App</h5>
                             <p class="text-muted small">Islamic counter app. Android/Flutter.</p>
                             <div class="mt-auto d-flex gap-2">
-                                <a href="#" class="btn-demo btn btn-sm" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="YOUR_VIDEO_ID_HERE">
+                                <a href="https://www.youtube.com/watch?v=YOUR_VIDEO_ID" target="_blank" class="btn-demo btn btn-sm">
                                     <i class="fas fa-play"></i> Demo
                                 </a>
-                                <a href="#" class="btn-code btn btn-sm"><i class="fab fa-github"></i> Code</a>
+                                <a href="https://play.google.com/store/apps/details?id=YOUR_PACKAGE_NAME" target="_blank" class="btn-playstore btn btn-sm">
+                                    <i class="fab fa-google-play"></i> Play Store
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
+                <!-- Online Food Order -->
                 <div class="col-md-6 col-lg-4">
                     <div class="project-card">
                         <img src="https://via.placeholder.com/400x200/06b6d4/ffffff?text=Food+Order" alt="Food" loading="lazy" />
@@ -407,10 +354,48 @@
                             <h5>Online Food Order</h5>
                             <p class="text-muted small">Spring Boot & Bootstrap.</p>
                             <div class="mt-auto d-flex gap-2">
-                                <a href="#" class="btn-demo btn btn-sm" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="YOUR_VIDEO_ID_HERE">
+                                <a href="https://www.youtube.com/watch?v=YOUR_VIDEO_ID" target="_blank" class="btn-demo btn btn-sm">
                                     <i class="fas fa-play"></i> Demo
                                 </a>
-                                <a href="#" class="btn-code btn btn-sm"><i class="fab fa-github"></i> Code</a>
+                                <a href="https://play.google.com/store/apps/details?id=YOUR_PACKAGE_NAME" target="_blank" class="btn-playstore btn btn-sm">
+                                    <i class="fab fa-google-play"></i> Play Store
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Habit Tracker -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="project-card">
+                        <img src="https://via.placeholder.com/400x200/ef4444/ffffff?text=Habit+Tracker" alt="Habit" loading="lazy" />
+                        <div class="project-body">
+                            <h5>Habit Tracker</h5>
+                            <p class="text-muted small">Android + Firebase.</p>
+                            <div class="mt-auto d-flex gap-2">
+                                <a href="https://www.youtube.com/watch?v=YOUR_VIDEO_ID" target="_blank" class="btn-demo btn btn-sm">
+                                    <i class="fas fa-play"></i> Demo
+                                </a>
+                                <a href="https://play.google.com/store/apps/details?id=YOUR_PACKAGE_NAME" target="_blank" class="btn-playstore btn btn-sm">
+                                    <i class="fab fa-google-play"></i> Play Store
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Salat Time -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="project-card">
+                        <img src="https://via.placeholder.com/400x200/10b981/ffffff?text=Salat+%26+Rasul" alt="Salat" loading="lazy" />
+                        <div class="project-body">
+                            <h5>Salat Time & Rasul</h5>
+                            <p class="text-muted small">Prayer reminder. Flutter.</p>
+                            <div class="mt-auto d-flex gap-2">
+                                <a href="https://www.youtube.com/watch?v=YOUR_VIDEO_ID" target="_blank" class="btn-demo btn btn-sm">
+                                    <i class="fas fa-play"></i> Demo
+                                </a>
+                                <a href="https://play.google.com/store/apps/details?id=YOUR_PACKAGE_NAME" target="_blank" class="btn-playstore btn btn-sm">
+                                    <i class="fab fa-google-play"></i> Play Store
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -514,24 +499,5 @@
             }
         });
     </script>
-
-    <script>
-        const videoModal = document.getElementById('videoModal');
-        const videoFrame = document.getElementById('videoFrame');
-
-        videoModal.addEventListener('show.bs.modal', function(event) {
-            const button = event.relatedTarget;
-            const videoId = button.getAttribute('data-video-id');
-            if (videoId) {
-                const embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1&playsinline=1`;
-                videoFrame.src = embedUrl;
-            }
-        });
-
-        videoModal.addEventListener('hidden.bs.modal', function() {
-            videoFrame.src = '';
-        });
-    </script>
-
 </body>
 </html>
