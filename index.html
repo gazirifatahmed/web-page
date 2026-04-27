@@ -44,6 +44,7 @@
             -webkit-backdrop-filter: blur(20px);
             box-shadow: 0 2px 20px rgba(0,0,0,0.3);
             padding: 14px 0;
+            transition: all 0.3s;
         }
         .navbar-brand { color: #ffffff !important; font-weight: 700; font-size: 1.5rem; letter-spacing: 0.5px; }
         .navbar-brand span { color: var(--accent); }
@@ -136,7 +137,16 @@
         .section-title { font-weight: 700; font-size: 2.3rem; text-align: center; margin-bottom: 50px; color: #1e293b; letter-spacing: 1px; }
         .section-title span { background: var(--gradient-2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .section-divider { width: 70px; height: 4px; background: var(--gradient-2); margin: 12px auto 0; border-radius: 2px; }
-        .about-img { border-radius: 20px; box-shadow: var(--shadow-lg); max-width: 100%; height: auto; }
+
+        /* About section image - reduced size */
+        .about-img {
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            max-width: 320px; /* smaller size */
+            height: auto;
+            margin: 0 auto;
+            display: block;
+        }
 
         .edu-card { background: var(--card-bg); border-radius: 18px; padding: 30px; box-shadow: var(--shadow); transition: all 0.4s; border: 1px solid var(--border); height: 100%; }
         .edu-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: var(--accent); }
@@ -149,11 +159,55 @@
         }
         .skill-badge:hover { background: var(--primary); color: #fff; border-color: var(--primary); transform: translateY(-3px); box-shadow: 0 10px 25px rgba(79,70,229,0.3); }
 
-        .project-card { background: var(--card-bg); border-radius: 20px; overflow: hidden; box-shadow: var(--shadow); transition: all 0.4s; border: 1px solid var(--border); height: 100%; display: flex; flex-direction: column; }
-        .project-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
-        .project-card img { width: 100%; height: 200px; object-fit: cover; }
-        .project-body { padding: 22px; flex: 1; display: flex; flex-direction: column; }
-        .project-body h5 { font-weight: 600; margin-bottom: 8px; }
+        /* Project Cards - More Professional */
+        .project-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1.2);
+            border: 1px solid var(--border);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.12);
+            border-color: transparent;
+        }
+        .project-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.6s;
+        }
+        .project-card:hover img { transform: scale(1.05); }
+        .project-body {
+            padding: 25px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background: linear-gradient(180deg, #ffffff 0%, #fafbff 100%);
+        }
+        .project-body h5 {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #1e293b;
+            font-size: 1.2rem;
+        }
+        .project-body .badge-tech {
+            font-size: 0.7rem;
+            font-weight: 500;
+            background: #eef2ff;
+            color: #4f46e5;
+            padding: 4px 10px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 10px;
+            letter-spacing: 0.3px;
+        }
         .btn-demo {
             background: linear-gradient(135deg, #4f46e5, #6366f1); color: #fff; border-radius: 30px;
             padding: 8px 20px; font-size: 0.88rem; font-weight: 500; transition: all 0.3s; border: none;
@@ -163,19 +217,20 @@
         .btn-code { border: 1.5px solid var(--border); color: var(--text); border-radius: 30px; padding: 8px 20px; font-size: 0.88rem; font-weight: 500; transition: all 0.3s; background: transparent; }
         .btn-code:hover { background: #f1f5f9; border-color: #cbd5e1; transform: translateY(-2px); }
 
+        .btn-playstore, .btn-apk {
+            border-radius: 30px; padding: 8px 20px; font-size: 0.88rem; font-weight: 500;
+            transition: all 0.3s; text-decoration: none; border: none;
+        }
         .btn-playstore {
-            background: linear-gradient(135deg, #0f9d58, #34a853); color: #fff; border-radius: 30px;
-            padding: 8px 20px; font-size: 0.88rem; font-weight: 500; transition: all 0.3s; border: none;
-            box-shadow: 0 4px 12px rgba(15,157,88,0.3); cursor: pointer; text-decoration: none;
+            background: linear-gradient(135deg, #0f9d58, #34a853); color: #fff;
+            box-shadow: 0 4px 12px rgba(15,157,88,0.3);
         }
         .btn-playstore:hover { background: linear-gradient(135deg, #0b8043, #0f9d58); transform: translateY(-2px); box-shadow: 0 6px 18px rgba(15,157,88,0.5); color: #fff; }
-
         .btn-apk {
-            background: linear-gradient(135deg, #f39c12, #e67e22); color: #fff; border-radius: 30px;
-            padding: 8px 20px; font-size: 0.88rem; font-weight: 500; transition: all 0.3s; border: none;
-            box-shadow: 0 4px 12px rgba(243,156,18,0.3); cursor: pointer; text-decoration: none;
+            background: linear-gradient(135deg, #f59e0b, #f97316); color: #fff;
+            box-shadow: 0 4px 12px rgba(245,158,11,0.3);
         }
-        .btn-apk:hover { background: linear-gradient(135deg, #d68910, #f39c12); transform: translateY(-2px); box-shadow: 0 6px 18px rgba(243,156,18,0.5); color: #fff; }
+        .btn-apk:hover { background: linear-gradient(135deg, #d97706, #ea580c); transform: translateY(-2px); box-shadow: 0 6px 18px rgba(245,158,11,0.5); color: #fff; }
 
         .contact-form input, .contact-form textarea {
             border-radius: 14px; padding: 15px 20px; border: 2px solid var(--border);
@@ -383,8 +438,9 @@
                     <div class="project-card">
                         <img src="image/tasbi image.png" alt="Tasbi & Zikir" loading="lazy" />
                         <div class="project-body">
+                            <span class="badge-tech">Flutter / Android</span>
                             <h5>Tasbi & Zikir App</h5>
-                            <p class="text-muted small">Islamic counter app. Android/Flutter.</p>
+                            <p class="text-muted small">Islamic counter app with daily tracking & reminders.</p>
                             <div class="mt-auto d-flex flex-wrap gap-2">
                                 <a href="#" class="btn-demo btn btn-sm" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="ENryf4DsVBQ">
                                     <i class="fas fa-play"></i> Demo
@@ -396,13 +452,14 @@
                     </div>
                 </div>
 
-                <!-- 2. ChatBox 💬 -->
+                <!-- 2. ChatBox -->
                 <div class="col-md-6 col-lg-4">
                     <div class="project-card">
                         <img src="image/Chat box.png" alt="ChatBox" loading="lazy" />
                         <div class="project-body">
+                            <span class="badge-tech">Flutter + Firebase</span>
                             <h5>ChatBox 💬</h5>
-                            <p class="text-muted small">Real-time chat, call & media sharing. Flutter + Firebase.</p>
+                            <p class="text-muted small">Real-time chat, call & media sharing.</p>
                             <div class="mt-auto d-flex flex-wrap gap-2">
                                 <a href="#" class="btn-demo btn btn-sm" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="YOUR_CHATBOX_VIDEO_ID">
                                     <i class="fas fa-play"></i> Demo
@@ -414,13 +471,14 @@
                     </div>
                 </div>
 
-                <!-- 3. QuickBrew ☕ -->
+                <!-- 3. QuickBrew -->
                 <div class="col-md-6 col-lg-4">
                     <div class="project-card">
                         <img src="image/Coffeshop.png" alt="QuickBrew" loading="lazy" />
                         <div class="project-body">
+                            <span class="badge-tech">Flutter + Firebase</span>
                             <h5>QuickBrew ☕</h5>
-                            <p class="text-muted small">Flash coffee ordering with discounts. Flutter + Firebase.</p>
+                            <p class="text-muted small">Flash coffee ordering with discounts.</p>
                             <div class="mt-auto d-flex flex-wrap gap-2">
                                 <a href="#" class="btn-demo btn btn-sm" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="YOUR_COFFEE_VIDEO_ID">
                                     <i class="fas fa-play"></i> Demo
@@ -432,13 +490,14 @@
                     </div>
                 </div>
 
-                <!-- 4. BanglaReads 📚 -->
+                <!-- 4. BanglaReads -->
                 <div class="col-md-6 col-lg-4">
                     <div class="project-card">
                         <img src="image/Book.png" alt="BanglaReads" loading="lazy" />
                         <div class="project-body">
+                            <span class="badge-tech">Flutter + Firebase</span>
                             <h5>BanglaReads 📚</h5>
-                            <p class="text-muted small">Curated library of famous Bangladeshi books. Flutter + Firebase.</p>
+                            <p class="text-muted small">Curated library of famous Bangladeshi books.</p>
                             <div class="mt-auto d-flex flex-wrap gap-2">
                                 <a href="#" class="btn-demo btn btn-sm" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="YOUR_BOOK_VIDEO_ID">
                                     <i class="fas fa-play"></i> Demo
@@ -450,13 +509,14 @@
                     </div>
                 </div>
 
-                <!-- 5. Salat Time & Rasul -->
+                <!-- 5. SalatPro – Complete Prayer Guide -->
                 <div class="col-md-6 col-lg-4">
                     <div class="project-card">
-                        <img src="image/solat.png" alt="Salat Time" loading="lazy" />
+                        <img src="image/solat.png" alt="SalatPro" loading="lazy" />
                         <div class="project-body">
-                            <h5>Salat Time & Rasul</h5>
-                            <p class="text-muted small">Prayer reminder. Flutter.</p>
+                            <span class="badge-tech">Flutter</span>
+                            <h5>SalatPro 🕌</h5>
+                            <p class="text-muted small">Complete Salat guide with authentic references, Wudu & Tayammum method, Qibla direction, prayer time notifications & more. Based on Sahih Hadith.</p>
                             <div class="mt-auto d-flex flex-wrap gap-2">
                                 <a href="#" class="btn-demo btn btn-sm" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="YOUR_SALAT_VIDEO_ID">
                                     <i class="fas fa-play"></i> Demo
@@ -468,13 +528,14 @@
                     </div>
                 </div>
 
-                <!-- 6. FeastRoyale 🍽️ -->
+                <!-- 6. FeastRoyale -->
                 <div class="col-md-6 col-lg-4">
                     <div class="project-card">
                         <img src="image/angularproject.png" alt="FeastRoyale" loading="lazy" />
                         <div class="project-body">
+                            <span class="badge-tech">Angular + Spring Boot + MySQL</span>
                             <h5>FeastRoyale 🍽️</h5>
-                            <p class="text-muted small">Full Online Food Order System. Angular + Spring Boot + MySQL.</p>
+                            <p class="text-muted small">Full Online Food Order System.</p>
                             <div class="mt-auto d-flex flex-wrap gap-2">
                                 <a href="#" class="btn-demo btn btn-sm" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="YOUR_FEASTROYALE_VIDEO_ID">
                                     <i class="fas fa-play"></i> Demo
@@ -490,8 +551,9 @@
                     <div class="project-card">
                         <img src="image/habit.png" alt="Habit Tracker" loading="lazy" />
                         <div class="project-body">
+                            <span class="badge-tech">Android + Firebase</span>
                             <h5>Habit Tracker</h5>
-                            <p class="text-muted small">Track daily habits. Android + Firebase.</p>
+                            <p class="text-muted small">Track daily habits with analytics.</p>
                             <div class="mt-auto d-flex flex-wrap gap-2">
                                 <a href="#" class="btn-demo btn btn-sm" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="YOUR_HABIT_VIDEO_ID">
                                     <i class="fas fa-play"></i> Demo
@@ -503,13 +565,14 @@
                     </div>
                 </div>
 
-                <!-- 8. QuizCraft 🧠 -->
+                <!-- 8. QuizCraft -->
                 <div class="col-md-6 col-lg-4">
                     <div class="project-card">
                         <img src="image/Mcq.png" alt="QuizCraft" loading="lazy" />
                         <div class="project-body">
+                            <span class="badge-tech">Flutter + Firebase</span>
                             <h5>QuizCraft 🧠</h5>
-                            <p class="text-muted small">Auto-generate MCQs from documents. Flutter + Firebase.</p>
+                            <p class="text-muted small">Auto-generate MCQs from documents.</p>
                             <div class="mt-auto d-flex flex-wrap gap-2">
                                 <a href="#" class="btn-demo btn btn-sm" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="YOUR_MCQ_VIDEO_ID">
                                     <i class="fas fa-play"></i> Demo
@@ -521,19 +584,20 @@
                     </div>
                 </div>
 
-                <!-- 9. FoodNest 🍕 (APK Link) -->
+                <!-- 9. FoodNest -->
                 <div class="col-md-6 col-lg-4">
                     <div class="project-card">
                         <img src="image/foodorderandroidstudio.png" alt="FoodNest" loading="lazy" />
                         <div class="project-body">
+                            <span class="badge-tech">Java + XML (Android)</span>
                             <h5>FoodNest 🍕</h5>
-                            <p class="text-muted small">Android-based Food Ordering App. Java + XML.</p>
+                            <p class="text-muted small">Android-based Food Ordering App.</p>
                             <div class="mt-auto d-flex flex-wrap gap-2">
                                 <a href="#" class="btn-demo btn btn-sm" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="41fSpWlr7lY">
                                     <i class="fas fa-play"></i> Demo
                                 </a>
                                 <a href="#" class="btn-code btn btn-sm"><i class="fab fa-github"></i> Code</a>
-                                <a href="#" class="btn-apk btn btn-sm"><i class="fas fa-download"></i> APK Link</a>
+                                <a href="YOUR_APK_LINK" class="btn-apk btn btn-sm" target="_blank"><i class="fas fa-download"></i> APK</a>
                             </div>
                         </div>
                     </div>
