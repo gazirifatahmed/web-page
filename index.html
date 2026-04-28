@@ -38,6 +38,7 @@
             overflow-x: hidden;
         }
 
+        /* ───── Navbar ───── */
         .navbar {
             background: rgba(8, 8, 20, 0.95);
             backdrop-filter: blur(20px);
@@ -48,11 +49,14 @@
         }
         .navbar-brand { color: #ffffff !important; font-weight: 700; font-size: 1.5rem; letter-spacing: 0.5px; }
         .navbar-brand span { color: var(--accent); }
+        .navbar-toggler { border: none; outline: none; box-shadow: none; }
+        .navbar-toggler-icon { background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); }
         .nav-link { color: #cbd5e1 !important; font-weight: 500; margin: 0 12px; transition: 0.3s; position: relative; }
         .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -3px; left: 0; background: var(--accent); transition: 0.3s; border-radius: 2px; }
         .nav-link:hover { color: #ffffff !important; }
         .nav-link:hover::after { width: 100%; }
 
+        /* ───── Hero ───── */
         .hero {
             background: var(--gradient-1);
             color: white;
@@ -115,9 +119,11 @@
         @keyframes ringRotate { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
         .hero h1 { font-weight: 700; font-size: 3rem; margin-top: 25px; position: relative; z-index: 1; letter-spacing: 1px; }
-        .hero .tagline { color: #a5b4fc; font-size: 1.2rem; font-weight: 400; position: relative; z-index: 1; letter-spacing: 0.5px; }
-        .hero .location { color: #cbd5e1; position: relative; z-index: 1; font-size: 0.95rem; margin-top: 5px; }
-        .location i { color: var(--accent); margin-right: 5px; }
+        /* ✅ tagline – slightly brighter */
+        .hero .tagline { color: #c7d2fe; font-size: 1.2rem; font-weight: 400; position: relative; z-index: 1; letter-spacing: 0.5px; }
+        /* ✅ location – MUCH brighter & glowing */
+        .hero .location { color: #f0e68c; position: relative; z-index: 1; font-size: 1.05rem; margin-top: 8px; font-weight: 500; text-shadow: 0 0 8px rgba(255,215,0,0.5); letter-spacing: 0.3px; }
+        .location i { color: #ffd966; margin-right: 6px; text-shadow: 0 0 10px rgba(255,215,0,0.6); }
 
         .btn-contact {
             background: linear-gradient(135deg, #ffffff 0%, #f0f0ff 100%); color: #1e1b4b;
@@ -127,26 +133,18 @@
         }
         .btn-contact:hover { background: var(--accent); color: #000; box-shadow: 0 10px 35px rgba(6,182,212,0.5); transform: translateY(-3px); }
         .btn-work {
-            border: 2px solid rgba(255,255,255,0.7); color: #ffffff; border-radius: 50px;
+            border: 2px solid rgba(255,255,255,0.8); color: #ffffff; border-radius: 50px;
             padding: 14px 32px; font-weight: 600; background: transparent; transition: all 0.4s;
             margin: 8px; position: relative; z-index: 1; text-decoration: none; display: inline-block; letter-spacing: 0.5px;
         }
-        .btn-work:hover { background: rgba(255,255,255,0.12); border-color: #ffffff; transform: translateY(-3px); box-shadow: 0 8px 25px rgba(255,255,255,0.15); }
+        .btn-work:hover { background: rgba(255,255,255,0.15); border-color: #ffffff; transform: translateY(-3px); box-shadow: 0 8px 25px rgba(255,255,255,0.2); }
 
         section { padding: 85px 0; scroll-margin-top: 65px; }
         .section-title { font-weight: 700; font-size: 2.3rem; text-align: center; margin-bottom: 50px; color: #1e293b; letter-spacing: 1px; }
         .section-title span { background: var(--gradient-2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .section-divider { width: 70px; height: 4px; background: var(--gradient-2); margin: 12px auto 0; border-radius: 2px; }
 
-        /* About section image - reduced size */
-        .about-img {
-            border-radius: 20px;
-            box-shadow: var(--shadow-lg);
-            max-width: 320px; /* smaller size */
-            height: auto;
-            margin: 0 auto;
-            display: block;
-        }
+        .about-img { border-radius: 20px; box-shadow: var(--shadow-lg); max-width: 320px; height: auto; margin: 0 auto; display: block; }
 
         .edu-card { background: var(--card-bg); border-radius: 18px; padding: 30px; box-shadow: var(--shadow); transition: all 0.4s; border: 1px solid var(--border); height: 100%; }
         .edu-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: var(--accent); }
@@ -159,77 +157,25 @@
         }
         .skill-badge:hover { background: var(--primary); color: #fff; border-color: var(--primary); transform: translateY(-3px); box-shadow: 0 10px 25px rgba(79,70,229,0.3); }
 
-        /* Project Cards - More Professional */
         .project-card {
-            background: var(--card-bg);
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1.2);
-            border: 1px solid var(--border);
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            position: relative;
+            background: var(--card-bg); border-radius: 20px; overflow: hidden;
+            box-shadow: var(--shadow); transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1.2);
+            border: 1px solid var(--border); height: 100%; display: flex; flex-direction: column;
         }
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 50px rgba(0,0,0,0.12);
-            border-color: transparent;
-        }
-        .project-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            transition: transform 0.6s;
-        }
-        .project-card:hover img { transform: scale(1.05); }
-        .project-body {
-            padding: 25px;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            background: linear-gradient(180deg, #ffffff 0%, #fafbff 100%);
-        }
-        .project-body h5 {
-            font-weight: 600;
-            margin-bottom: 8px;
-            color: #1e293b;
-            font-size: 1.2rem;
-        }
-        .project-body .badge-tech {
-            font-size: 0.7rem;
-            font-weight: 500;
-            background: #eef2ff;
-            color: #4f46e5;
-            padding: 4px 10px;
-            border-radius: 20px;
-            display: inline-block;
-            margin-bottom: 10px;
-            letter-spacing: 0.3px;
-        }
-        .btn-demo {
-            background: linear-gradient(135deg, #4f46e5, #6366f1); color: #fff; border-radius: 30px;
-            padding: 8px 20px; font-size: 0.88rem; font-weight: 500; transition: all 0.3s; border: none;
-            box-shadow: 0 4px 12px rgba(79,70,229,0.3); cursor: pointer;
-        }
+        .project-card:hover { transform: translateY(-10px); box-shadow: 0 25px 50px rgba(0,0,0,0.12); border-color: transparent; }
+        .project-card img { width: 100%; height: 200px; object-fit: cover; }
+        .project-body { padding: 25px; flex: 1; display: flex; flex-direction: column; background: linear-gradient(180deg, #ffffff 0%, #fafbff 100%); }
+        .project-body h5 { font-weight: 600; margin-bottom: 8px; color: #1e293b; font-size: 1.2rem; }
+        .badge-tech { font-size: 0.7rem; font-weight: 500; background: #eef2ff; color: #4f46e5; padding: 4px 10px; border-radius: 20px; display: inline-block; margin-bottom: 10px; }
+
+        .btn-demo { background: linear-gradient(135deg, #4f46e5, #6366f1); color: #fff; border-radius: 30px; padding: 8px 20px; font-size: 0.88rem; font-weight: 500; transition: all 0.3s; border: none; box-shadow: 0 4px 12px rgba(79,70,229,0.3); cursor: pointer; }
         .btn-demo:hover { background: linear-gradient(135deg, #3730a3, #4f46e5); transform: translateY(-2px); box-shadow: 0 6px 18px rgba(79,70,229,0.5); }
         .btn-code { border: 1.5px solid var(--border); color: var(--text); border-radius: 30px; padding: 8px 20px; font-size: 0.88rem; font-weight: 500; transition: all 0.3s; background: transparent; }
         .btn-code:hover { background: #f1f5f9; border-color: #cbd5e1; transform: translateY(-2px); }
-
-        .btn-playstore, .btn-apk {
-            border-radius: 30px; padding: 8px 20px; font-size: 0.88rem; font-weight: 500;
-            transition: all 0.3s; text-decoration: none; border: none;
-        }
-        .btn-playstore {
-            background: linear-gradient(135deg, #0f9d58, #34a853); color: #fff;
-            box-shadow: 0 4px 12px rgba(15,157,88,0.3);
-        }
+        .btn-playstore, .btn-apk { border-radius: 30px; padding: 8px 20px; font-size: 0.88rem; font-weight: 500; transition: all 0.3s; text-decoration: none; border: none; }
+        .btn-playstore { background: linear-gradient(135deg, #0f9d58, #34a853); color: #fff; box-shadow: 0 4px 12px rgba(15,157,88,0.3); }
         .btn-playstore:hover { background: linear-gradient(135deg, #0b8043, #0f9d58); transform: translateY(-2px); box-shadow: 0 6px 18px rgba(15,157,88,0.5); color: #fff; }
-        .btn-apk {
-            background: linear-gradient(135deg, #f59e0b, #f97316); color: #fff;
-            box-shadow: 0 4px 12px rgba(245,158,11,0.3);
-        }
+        .btn-apk { background: linear-gradient(135deg, #f59e0b, #f97316); color: #fff; box-shadow: 0 4px 12px rgba(245,158,11,0.3); }
         .btn-apk:hover { background: linear-gradient(135deg, #d97706, #ea580c); transform: translateY(-2px); box-shadow: 0 6px 18px rgba(245,158,11,0.5); color: #fff; }
 
         .contact-form input, .contact-form textarea {
@@ -237,31 +183,17 @@
             background: #fff; transition: all 0.3s; font-size: 1rem;
         }
         .contact-form input:focus, .contact-form textarea:focus { border-color: var(--primary); box-shadow: 0 0 20px rgba(79,70,229,0.12); outline: none; }
-        .btn-submit {
-            background: var(--gradient-2); border: none; color: #fff; border-radius: 50px;
-            padding: 15px; font-weight: 600; font-size: 1.1rem; transition: all 0.4s; width: 100%;
-            box-shadow: 0 6px 20px rgba(6,182,212,0.3);
-        }
+        .btn-submit { background: var(--gradient-2); border: none; color: #fff; border-radius: 50px; padding: 15px; font-weight: 600; font-size: 1.1rem; transition: all 0.4s; width: 100%; box-shadow: 0 6px 20px rgba(6,182,212,0.3); }
         .btn-submit:hover { box-shadow: 0 12px 35px rgba(6,182,212,0.5); transform: translateY(-3px); }
 
         footer { background: #0a0a1a; color: #94a3b8; padding: 45px 0 25px; text-align: center; }
-        .social-icons a {
-            display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px;
-            border-radius: 50%; background: rgba(255,255,255,0.05); color: #cbd5e1; font-size: 1.3rem;
-            margin: 0 9px; transition: all 0.3s; border: 1px solid rgba(255,255,255,0.08);
-        }
+        .social-icons a { display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; background: rgba(255,255,255,0.05); color: #cbd5e1; font-size: 1.3rem; margin: 0 9px; transition: all 0.3s; border: 1px solid rgba(255,255,255,0.08); }
         .social-icons a:hover { background: var(--accent); color: #000; transform: translateY(-5px); box-shadow: 0 10px 25px rgba(6,182,212,0.4); border-color: transparent; }
 
         #videoModal .modal-dialog { max-width: 380px; display: flex; align-items: center; justify-content: center; }
         #videoModal .modal-content { background: transparent; border: none; box-shadow: none; }
-        .phone-frame {
-            background: #111; border-radius: 30px; padding: 12px;
-            box-shadow: 0 0 40px rgba(0,0,0,0.8), 0 0 0 2px #333; position: relative; margin: 10px;
-        }
-        .phone-screen {
-            background: #000; border-radius: 22px; overflow: hidden;
-            aspect-ratio: 9 / 16; width: 100%;
-        }
+        .phone-frame { background: #111; border-radius: 30px; padding: 12px; box-shadow: 0 0 40px rgba(0,0,0,0.8), 0 0 0 2px #333; position: relative; margin: 10px; }
+        .phone-screen { background: #000; border-radius: 22px; overflow: hidden; aspect-ratio: 9 / 16; width: 100%; }
         .phone-screen iframe { width: 100%; height: 100%; border: none; }
         .phone-notch { width: 80px; height: 4px; background: #333; border-radius: 4px; margin: 0 auto 8px; }
 
@@ -274,6 +206,7 @@
             section { padding: 55px 0; }
             .section-title { font-size: 1.8rem; }
             #videoModal .modal-dialog { max-width: 320px; }
+            /* ✅ mobile-nav auto-close on click */
         }
     </style>
 </head>
@@ -282,7 +215,7 @@
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">Gazi<span>Rifat</span></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu" aria-controls="navmenu" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navmenu">
@@ -311,7 +244,7 @@
             </div>
             <h1 class="display-4 fw-bold">Gazi Rifat Ahmed</h1>
             <p class="tagline mb-3">Software Engineer | Mobile & Web Specialist</p>
-            <p class="location"><i class="fas fa-map-marker-alt"></i> Bangladesh ,Dhaka - 1219</p>
+            <p class="location"><i class="fas fa-map-marker-alt"></i> Bangladesh, Dhaka - 1219</p>
             <div class="d-flex justify-content-center gap-3 mt-4">
                 <button class="btn-contact" data-bs-toggle="modal" data-bs-target="#contactModal">
                     <i class="fas fa-envelope me-2"></i> Contact With Me
@@ -321,6 +254,7 @@
         </div>
     </header>
 
+    <!-- Contact Modal -->
     <div class="modal fade" id="contactModal" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content rounded-4 border-0 shadow-lg">
@@ -341,11 +275,12 @@
         </div>
     </div>
 
-    <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+    <!-- Video Modal -->
+    <div class="modal fade" id="videoModal" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <div class="modal-header border-0 justify-content-end" style="position: absolute; right: 0; z-index: 10; padding: 8px;">
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close" style="filter: drop-shadow(0 0 3px black);"></button>
+                <div class="modal-header border-0 justify-content-end" style="position:absolute;right:0;z-index:10;padding:8px;">
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body p-0">
                     <div class="phone-frame">
@@ -425,184 +360,21 @@
         </div>
     </section>
 
-    <!-- ==================== PROJECTS SECTION ==================== -->
     <section id="projects" style="background:#ffffff;">
         <div class="container">
             <h2 class="section-title">My <span>Projects</span></h2>
             <div class="section-divider"></div>
             <p class="text-center text-muted mt-3">Flutter, Firebase, Angular, Spring Boot & more</p>
             <div class="row g-4 mt-4">
-
-                <!-- 1. Tasbi & Zikir App -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="project-card">
-                        <img src="image/tasbi image.png" alt="Tasbi & Zikir" loading="lazy" />
-                        <div class="project-body">
-                            <span class="badge-tech">Flutter / Android</span>
-                            <h5>Tasbi & Zikir App</h5>
-                            <p class="text-muted small">Islamic counter app with daily tracking & reminders.</p>
-                            <div class="mt-auto d-flex flex-wrap gap-2">
-                                <a href="#" class="btn-demo btn btn-sm" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="ENryf4DsVBQ">
-                                    <i class="fas fa-play"></i> Demo
-                                </a>
-                                <a href="#" class="btn-code btn btn-sm"><i class="fab fa-github"></i> Code</a>
-                                <a href="#" class="btn-playstore btn btn-sm"><i class="fab fa-google-play"></i> Play Store</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 2. ChatBox -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="project-card">
-                        <img src="image/Chat box.png" alt="ChatBox" loading="lazy" />
-                        <div class="project-body">
-                            <span class="badge-tech">Flutter + Firebase</span>
-                            <h5>ChatBox 💬</h5>
-                            <p class="text-muted small">Real-time chat, call & media sharing.</p>
-                            <div class="mt-auto d-flex flex-wrap gap-2">
-                                <a href="#" class="btn-demo btn btn-sm" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="YOUR_CHATBOX_VIDEO_ID">
-                                    <i class="fas fa-play"></i> Demo
-                                </a>
-                                <a href="#" class="btn-code btn btn-sm"><i class="fab fa-github"></i> Code</a>
-                                <a href="#" class="btn-playstore btn btn-sm"><i class="fab fa-google-play"></i> Play Store</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 3. QuickBrew -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="project-card">
-                        <img src="image/Coffeshop.png" alt="QuickBrew" loading="lazy" />
-                        <div class="project-body">
-                            <span class="badge-tech">Flutter + Firebase</span>
-                            <h5>QuickBrew ☕</h5>
-                            <p class="text-muted small">Flash coffee ordering with discounts.</p>
-                            <div class="mt-auto d-flex flex-wrap gap-2">
-                                <a href="#" class="btn-demo btn btn-sm" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="YOUR_COFFEE_VIDEO_ID">
-                                    <i class="fas fa-play"></i> Demo
-                                </a>
-                                <a href="#" class="btn-code btn btn-sm"><i class="fab fa-github"></i> Code</a>
-                                <a href="#" class="btn-playstore btn btn-sm"><i class="fab fa-google-play"></i> Play Store</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 4. BanglaReads -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="project-card">
-                        <img src="image/Book.png" alt="BanglaReads" loading="lazy" />
-                        <div class="project-body">
-                            <span class="badge-tech">Flutter + Firebase</span>
-                            <h5>BanglaReads 📚</h5>
-                            <p class="text-muted small">Curated library of famous Bangladeshi books.</p>
-                            <div class="mt-auto d-flex flex-wrap gap-2">
-                                <a href="#" class="btn-demo btn btn-sm" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="YOUR_BOOK_VIDEO_ID">
-                                    <i class="fas fa-play"></i> Demo
-                                </a>
-                                <a href="#" class="btn-code btn btn-sm"><i class="fab fa-github"></i> Code</a>
-                                <a href="#" class="btn-playstore btn btn-sm"><i class="fab fa-google-play"></i> Play Store</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 5. SalatPro – Complete Prayer Guide -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="project-card">
-                        <img src="image/solat.png" alt="SalatPro" loading="lazy" />
-                        <div class="project-body">
-                            <span class="badge-tech">Flutter</span>
-                            <h5>SalatPro 🕌</h5>
-                            <p class="text-muted small">Complete Salat guide with authentic references, Wudu & Tayammum method, Qibla direction, prayer time notifications & more. Based on Sahih Hadith.</p>
-                            <div class="mt-auto d-flex flex-wrap gap-2">
-                                <a href="#" class="btn-demo btn btn-sm" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="YOUR_SALAT_VIDEO_ID">
-                                    <i class="fas fa-play"></i> Demo
-                                </a>
-                                <a href="#" class="btn-code btn btn-sm"><i class="fab fa-github"></i> Code</a>
-                                <a href="#" class="btn-playstore btn btn-sm"><i class="fab fa-google-play"></i> Play Store</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 6. FeastRoyale -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="project-card">
-                        <img src="image/angularproject.png" alt="FeastRoyale" loading="lazy" />
-                        <div class="project-body">
-                            <span class="badge-tech">Angular + Spring Boot + MySQL</span>
-                            <h5>FeastRoyale 🍽️</h5>
-                            <p class="text-muted small">Full Online Food Order System.</p>
-                            <div class="mt-auto d-flex flex-wrap gap-2">
-                                <a href="#" class="btn-demo btn btn-sm" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="YOUR_FEASTROYALE_VIDEO_ID">
-                                    <i class="fas fa-play"></i> Demo
-                                </a>
-                                <a href="#" class="btn-code btn btn-sm"><i class="fab fa-github"></i> Code</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 7. Habit Tracker -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="project-card">
-                        <img src="image/habit.png" alt="Habit Tracker" loading="lazy" />
-                        <div class="project-body">
-                            <span class="badge-tech">Android + Firebase</span>
-                            <h5>Habit Tracker</h5>
-                            <p class="text-muted small">Track daily habits with analytics.</p>
-                            <div class="mt-auto d-flex flex-wrap gap-2">
-                                <a href="#" class="btn-demo btn btn-sm" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="YOUR_HABIT_VIDEO_ID">
-                                    <i class="fas fa-play"></i> Demo
-                                </a>
-                                <a href="#" class="btn-code btn btn-sm"><i class="fab fa-github"></i> Code</a>
-                                <a href="#" class="btn-playstore btn btn-sm"><i class="fab fa-google-play"></i> Play Store</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 8. QuizCraft -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="project-card">
-                        <img src="image/Mcq.png" alt="QuizCraft" loading="lazy" />
-                        <div class="project-body">
-                            <span class="badge-tech">Flutter + Firebase</span>
-                            <h5>QuizCraft 🧠</h5>
-                            <p class="text-muted small">Auto-generate MCQs from documents.</p>
-                            <div class="mt-auto d-flex flex-wrap gap-2">
-                                <a href="#" class="btn-demo btn btn-sm" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="YOUR_MCQ_VIDEO_ID">
-                                    <i class="fas fa-play"></i> Demo
-                                </a>
-                                <a href="#" class="btn-code btn btn-sm"><i class="fab fa-github"></i> Code</a>
-                                <a href="#" class="btn-playstore btn btn-sm"><i class="fab fa-google-play"></i> Play Store</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 9. FoodNest -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="project-card">
-                        <img src="image/foodorderandroidstudio.png" alt="FoodNest" loading="lazy" />
-                        <div class="project-body">
-                            <span class="badge-tech">Java + XML (Android)</span>
-                            <h5>FoodNest 🍕</h5>
-                            <p class="text-muted small">Android-based Food Ordering App.</p>
-                            <div class="mt-auto d-flex flex-wrap gap-2">
-                                <a href="#" class="btn-demo btn btn-sm" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="41fSpWlr7lY">
-                                    <i class="fas fa-play"></i> Demo
-                                </a>
-                                <a href="#" class="btn-code btn btn-sm"><i class="fab fa-github"></i> Code</a>
-                                <a href="YOUR_APK_LINK" class="btn-apk btn btn-sm" target="_blank"><i class="fas fa-download"></i> APK</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+                <!-- 1 --><div class="col-md-6 col-lg-4"><div class="project-card"><img src="image/tasbi image.png" alt="Tasbi" loading="lazy" /><div class="project-body"><span class="badge-tech">Flutter / Android</span><h5>Tasbi & Zikir App</h5><p class="text-muted small">Islamic counter app with daily tracking & reminders.</p><div class="mt-auto d-flex flex-wrap gap-2"><a href="#" class="btn-demo btn btn-sm" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="ENryf4DsVBQ"><i class="fas fa-play"></i> Demo</a><a href="#" class="btn-code btn btn-sm"><i class="fab fa-github"></i> Code</a><a href="#" class="btn-playstore btn btn-sm"><i class="fab fa-google-play"></i> Play Store</a></div></div></div></div>
+                <!-- 2 --><div class="col-md-6 col-lg-4"><div class="project-card"><img src="image/Chat box.png" alt="ChatBox" loading="lazy" /><div class="project-body"><span class="badge-tech">Flutter + Firebase</span><h5>ChatBox 💬</h5><p class="text-muted small">Real-time chat, call & media sharing.</p><div class="mt-auto d-flex flex-wrap gap-2"><a href="#" class="btn-demo btn btn-sm" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="YOUR_CHATBOX_VIDEO_ID"><i class="fas fa-play"></i> Demo</a><a href="#" class="btn-code btn btn-sm"><i class="fab fa-github"></i> Code</a><a href="#" class="btn-playstore btn btn-sm"><i class="fab fa-google-play"></i> Play Store</a></div></div></div></div>
+                <!-- 3 --><div class="col-md-6 col-lg-4"><div class="project-card"><img src="image/Coffeshop.png" alt="QuickBrew" loading="lazy" /><div class="project-body"><span class="badge-tech">Flutter + Firebase</span><h5>QuickBrew ☕</h5><p class="text-muted small">Flash coffee ordering with discounts.</p><div class="mt-auto d-flex flex-wrap gap-2"><a href="#" class="btn-demo btn btn-sm" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="YOUR_COFFEE_VIDEO_ID"><i class="fas fa-play"></i> Demo</a><a href="#" class="btn-code btn btn-sm"><i class="fab fa-github"></i> Code</a><a href="#" class="btn-playstore btn btn-sm"><i class="fab fa-google-play"></i> Play Store</a></div></div></div></div>
+                <!-- 4 --><div class="col-md-6 col-lg-4"><div class="project-card"><img src="image/Book.png" alt="BanglaReads" loading="lazy" /><div class="project-body"><span class="badge-tech">Flutter + Firebase</span><h5>BanglaReads 📚</h5><p class="text-muted small">Curated library of famous Bangladeshi books.</p><div class="mt-auto d-flex flex-wrap gap-2"><a href="#" class="btn-demo btn btn-sm" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="YOUR_BOOK_VIDEO_ID"><i class="fas fa-play"></i> Demo</a><a href="#" class="btn-code btn btn-sm"><i class="fab fa-github"></i> Code</a><a href="#" class="btn-playstore btn btn-sm"><i class="fab fa-google-play"></i> Play Store</a></div></div></div></div>
+                <!-- 5 --><div class="col-md-6 col-lg-4"><div class="project-card"><img src="image/solat.png" alt="SalatPro" loading="lazy" /><div class="project-body"><span class="badge-tech">Flutter</span><h5>SalatPro 🕌</h5><p class="text-muted small">Complete Salat guide with authentic references, Wudu & Tayammum method, Qibla direction, prayer time notifications & more. Based on Sahih Hadith.</p><div class="mt-auto d-flex flex-wrap gap-2"><a href="#" class="btn-demo btn btn-sm" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="YOUR_SALAT_VIDEO_ID"><i class="fas fa-play"></i> Demo</a><a href="#" class="btn-code btn btn-sm"><i class="fab fa-github"></i> Code</a><a href="#" class="btn-playstore btn btn-sm"><i class="fab fa-google-play"></i> Play Store</a></div></div></div></div>
+                <!-- 6 --><div class="col-md-6 col-lg-4"><div class="project-card"><img src="image/angularproject.png" alt="FeastRoyale" loading="lazy" /><div class="project-body"><span class="badge-tech">Angular + Spring Boot + MySQL</span><h5>FeastRoyale 🍽️</h5><p class="text-muted small">Full Online Food Order System.</p><div class="mt-auto d-flex flex-wrap gap-2"><a href="#" class="btn-demo btn btn-sm" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="YOUR_FEASTROYALE_VIDEO_ID"><i class="fas fa-play"></i> Demo</a><a href="#" class="btn-code btn btn-sm"><i class="fab fa-github"></i> Code</a></div></div></div></div>
+                <!-- 7 --><div class="col-md-6 col-lg-4"><div class="project-card"><img src="image/habit.png" alt="Habit Tracker" loading="lazy" /><div class="project-body"><span class="badge-tech">Android + Firebase</span><h5>Habit Tracker</h5><p class="text-muted small">Track daily habits with analytics.</p><div class="mt-auto d-flex flex-wrap gap-2"><a href="#" class="btn-demo btn btn-sm" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="YOUR_HABIT_VIDEO_ID"><i class="fas fa-play"></i> Demo</a><a href="#" class="btn-code btn btn-sm"><i class="fab fa-github"></i> Code</a><a href="#" class="btn-playstore btn btn-sm"><i class="fab fa-google-play"></i> Play Store</a></div></div></div></div>
+                <!-- 8 --><div class="col-md-6 col-lg-4"><div class="project-card"><img src="image/Mcq.png" alt="QuizCraft" loading="lazy" /><div class="project-body"><span class="badge-tech">Flutter + Firebase</span><h5>QuizCraft 🧠</h5><p class="text-muted small">Auto-generate MCQs from documents.</p><div class="mt-auto d-flex flex-wrap gap-2"><a href="#" class="btn-demo btn btn-sm" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="YOUR_MCQ_VIDEO_ID"><i class="fas fa-play"></i> Demo</a><a href="#" class="btn-code btn btn-sm"><i class="fab fa-github"></i> Code</a><a href="#" class="btn-playstore btn btn-sm"><i class="fab fa-google-play"></i> Play Store</a></div></div></div></div>
+                <!-- 9 --><div class="col-md-6 col-lg-4"><div class="project-card"><img src="image/foodorderandroidstudio.png" alt="FoodNest" loading="lazy" /><div class="project-body"><span class="badge-tech">Java + XML (Android)</span><h5>FoodNest 🍕</h5><p class="text-muted small">Android-based Food Ordering App.</p><div class="mt-auto d-flex flex-wrap gap-2"><a href="#" class="btn-demo btn btn-sm" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-id="41fSpWlr7lY"><i class="fas fa-play"></i> Demo</a><a href="#" class="btn-code btn btn-sm"><i class="fab fa-github"></i> Code</a><a href="YOUR_APK_LINK" class="btn-apk btn btn-sm" target="_blank"><i class="fas fa-download"></i> APK</a></div></div></div></div>
             </div>
         </div>
     </section>
@@ -644,6 +416,34 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- ✅ Mobile Navbar Auto-Close on outside click & link click -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navToggler = document.querySelector('.navbar-toggler');
+            const navCollapse = document.querySelector('#navmenu');
+            const navLinks = document.querySelectorAll('#navmenu .nav-link');
+
+            // Close when clicking a nav link
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (window.innerWidth < 992) {
+                        const bsCollapse = bootstrap.Collapse.getInstance(navCollapse);
+                        if (bsCollapse) bsCollapse.hide();
+                    }
+                });
+            });
+
+            // Close when clicking outside the navbar
+            document.addEventListener('click', function(event) {
+                const isClickInside = navCollapse.contains(event.target) || navToggler.contains(event.target);
+                if (!isClickInside && navCollapse.classList.contains('show')) {
+                    const bsCollapse = bootstrap.Collapse.getInstance(navCollapse);
+                    if (bsCollapse) bsCollapse.hide();
+                }
+            });
+        });
+    </script>
 
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
