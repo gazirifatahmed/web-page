@@ -1,5 +1,3 @@
-Here is the fully updated HTML code for your portfolio. I have replaced the dummy placeholder images for "Amal Tracker" and "LoopChat" with the actual images you provided, and kept all other project details intact.
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,7 +38,6 @@ Here is the fully updated HTML code for your portfolio. I have replaced the dumm
             overflow-x: hidden;
         }
 
-        /* ───── Navbar ───── */
         .navbar {
             background: rgba(8, 8, 20, 0.95);
             backdrop-filter: blur(20px);
@@ -58,7 +55,6 @@ Here is the fully updated HTML code for your portfolio. I have replaced the dumm
         .nav-link:hover { color: #ffffff !important; }
         .nav-link:hover::after { width: 100%; }
 
-        /* ───── Hero ───── */
         .hero {
             background: var(--gradient-1);
             color: white;
@@ -151,9 +147,9 @@ Here is the fully updated HTML code for your portfolio. I have replaced the dumm
         .edu-icon { font-size: 2.2rem; color: var(--primary); margin-bottom: 14px; }
 
         .skill-badge {
-            background: var(--card-bg); color: var(--primary); padding: 11px 24px; margin: 8px;
+            background: var(--card-bg); color: var(--primary); padding: 11px 20px; margin: 8px;
             border-radius: 50px; font-weight: 500; display: inline-block; box-shadow: 0 2px 10px rgba(0,0,0,0.06);
-            transition: all 0.3s; border: 1.5px solid var(--border); font-size: 0.95rem;
+            transition: all 0.3s; border: 1.5px solid var(--border); font-size: 0.9rem;
         }
         .skill-badge:hover { background: var(--primary); color: #fff; border-color: var(--primary); transform: translateY(-3px); box-shadow: 0 10px 25px rgba(79,70,229,0.3); }
 
@@ -163,7 +159,7 @@ Here is the fully updated HTML code for your portfolio. I have replaced the dumm
             border: 1px solid var(--border); height: 100%; display: flex; flex-direction: column;
         }
         .project-card:hover { transform: translateY(-10px); box-shadow: 0 25px 50px rgba(0,0,0,0.12); border-color: transparent; }
-        .project-card img { width: 100%; height: 200px; object-fit: cover; }
+        .project-card img { width: 100%; height: 200px; object-fit: cover; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
         .project-body { padding: 25px; flex: 1; display: flex; flex-direction: column; background: linear-gradient(180deg, #ffffff 0%, #fafbff 100%); }
         .project-body h5 { font-weight: 600; margin-bottom: 8px; color: #1e293b; font-size: 1.2rem; }
         .badge-tech { font-size: 0.7rem; font-weight: 500; background: #eef2ff; color: #4f46e5; padding: 4px 10px; border-radius: 20px; display: inline-block; margin-bottom: 10px; }
@@ -196,6 +192,24 @@ Here is the fully updated HTML code for your portfolio. I have replaced the dumm
         .phone-screen { background: #000; border-radius: 22px; overflow: hidden; aspect-ratio: 9 / 16; width: 100%; }
         .phone-screen iframe { width: 100%; height: 100%; border: none; }
         .phone-notch { width: 80px; height: 4px; background: #333; border-radius: 4px; margin: 0 auto 8px; }
+
+        /* Weather & Calculator SVG image styles */
+        .weather-svg {
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+        .calc-svg {
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fbbf24;
+            font-size: 3rem;
+        }
 
         @media (max-width: 768px) {
             .hero { padding: 130px 0 80px; }
@@ -352,9 +366,11 @@ Here is the fully updated HTML code for your portfolio. I have replaced the dumm
                 <span class="skill-badge">CSS3</span><span class="skill-badge">Bootstrap 5</span>
                 <span class="skill-badge">JavaScript</span><span class="skill-badge">Oracle 19c</span>
                 <span class="skill-badge">MySQL</span><span class="skill-badge">PostgreSQL</span>
-                <span class="skill-badge">UML</span><span class="skill-badge">Git & GitHub</span>
-                <span class="skill-badge">REST API</span><span class="skill-badge">XML</span>
-                <span class="skill-badge">AWS</span>
+                <span class="skill-badge">Firebase</span><span class="skill-badge">Supabase</span>
+                <span class="skill-badge">ZEGO Cloud</span><span class="skill-badge">OpenAPI</span>
+                <span class="skill-badge">MongoDB</span><span class="skill-badge">REST API</span>
+                <span class="skill-badge">Git & GitHub</span><span class="skill-badge">AWS</span>
+                <span class="skill-badge">XML</span><span class="skill-badge">UML</span>
             </div>
         </div>
     </section>
@@ -365,30 +381,32 @@ Here is the fully updated HTML code for your portfolio. I have replaced the dumm
             <div class="section-divider"></div>
             <p class="text-center text-muted mt-3">Flutter, Firebase, Angular, Spring Boot, Android & more</p>
             <div class="row g-4 mt-4">
-                <!-- 1: Sifatus Salah -->
-                <div class="col-md-6 col-lg-4"><div class="project-card"><img src="https://placehold.co/600x400/1e293b/ffffff?text=Sifatus+Salah" alt="Sifatus Salah" loading="lazy" style="background:#1e293b; object-fit:cover;" /><div class="project-body"><span class="badge-tech">Flutter</span><h5>Sifatus Salah – Prayer Times</h5><p class="text-muted small">Accurate prayer times with clean modern UI. Cross-platform Flutter app demonstrating strong UI/UX design.</p><div class="mt-auto d-flex flex-wrap gap-2"><a href="https://github.com/gazirifatahmed/sifatus_salah_app/releases/download/v1.0.0/app-release.apk" class="btn-apk btn btn-sm" target="_blank"><i class="fas fa-download"></i> APK</a><a href="https://github.com/gazirifatahmed/sifatus_salah_app" class="btn-code btn btn-sm" target="_blank"><i class="fab fa-github"></i> Code</a></div></div></div></div>
-                <!-- 2: Android Food Ordering -->
-                <div class="col-md-6 col-lg-4"><div class="project-card"><img src="image/foodorderandroidstudio.png" alt="FoodNest" loading="lazy" /><div class="project-body"><span class="badge-tech">Java + SQLite</span><h5>Android Food Ordering</h5><p class="text-muted small">Browse items, cart, orders with SQLite backend.</p><div class="mt-auto d-flex flex-wrap gap-2"><a href="https://github.com/gazirifatahmed/android-food-ordering-sqlite" class="btn-code btn btn-sm" target="_blank"><i class="fab fa-github"></i> Code</a></div></div></div></div>
-                <!-- 3: Online Food Ordering (Frontend) -->
-                <div class="col-md-6 col-lg-4"><div class="project-card"><img src="image/Coffeshop.png" alt="QuickBrew" loading="lazy" /><div class="project-body"><span class="badge-tech">HTML/CSS/JS</span><h5>Food Demo Online</h5><p class="text-muted small">Interactive food ordering frontend with cart & checkout.</p><div class="mt-auto d-flex flex-wrap gap-2"><a href="https://gazirifatahmed.github.io/food-demo-online/" class="btn-demo btn btn-sm" target="_blank"><i class="fas fa-globe"></i> Live Demo</a><a href="https://github.com/gazirifatahmed/food-demo-online" class="btn-code btn btn-sm" target="_blank"><i class="fab fa-github"></i> Code</a></div></div></div></div>
-                <!-- 4: Spring Boot + Angular Fullstack -->
-                <div class="col-md-6 col-lg-4"><div class="project-card"><img src="image/angularproject.png" alt="FeastRoyale" loading="lazy" /><div class="project-body"><span class="badge-tech">Angular + Spring Boot + MySQL</span><h5>Online Food System (Angular/Spring)</h5><p class="text-muted small">Full-stack food ordering & delivery management.</p><div class="mt-auto d-flex flex-wrap gap-2"><a href="https://github.com/gazirifatahmed/angular_spring.git" class="btn-code btn btn-sm" target="_blank"><i class="fab fa-github"></i> Code</a></div></div></div></div>
-                <!-- 5: Smart Food Ordering Flutter + Spring Boot -->
-                <div class="col-md-6 col-lg-4"><div class="project-card"><img src="image/Chat box.png" alt="SmartFoodApp" loading="lazy" /><div class="project-body"><span class="badge-tech">Flutter + Spring Boot + MySQL</span><h5>Smart Food Ordering</h5><p class="text-muted small">Full-stack ordering with real-time tracking & admin panel.</p><div class="mt-auto d-flex flex-wrap gap-2"><a href="https://github.com/gazirifatahmed/flutter_project.git" class="btn-code btn btn-sm" target="_blank"><i class="fab fa-github"></i> Code</a></div></div></div></div>
-                <!-- 6: Premium Bengali E-Reader -->
-                <div class="col-md-6 col-lg-4"><div class="project-card"><img src="image/Book.png" alt="BanglaReads" loading="lazy" /><div class="project-body"><span class="badge-tech">Flutter + Provider</span><h5>Premium Bengali E-Reader</h5><p class="text-muted small">Sleek glassmorphic e-reader for classic Bengali literature.</p><div class="mt-auto d-flex flex-wrap gap-2"><a href="https://github.com/gazirifatahmed/Book_Verse" class="btn-code btn btn-sm" target="_blank"><i class="fab fa-github"></i> Code</a></div></div></div></div>
-                <!-- 7: Multi-Role Coffee Ordering -->
-                <div class="col-md-6 col-lg-4"><div class="project-card"><img src="image/tasbi image.png" alt="Coffee Ordering" loading="lazy" /><div class="project-body"><span class="badge-tech">Flutter + Firebase</span><h5>Multi-Role Coffee Ordering</h5><p class="text-muted small">Admin, Owner, Customer dashboards, real-time tracking.</p><div class="mt-auto d-flex flex-wrap gap-2"><a href="https://github.com/gazirifatahmed/coffee_ordering_system" class="btn-code btn btn-sm" target="_blank"><i class="fab fa-github"></i> Code</a></div></div></div></div>
-                <!-- 8: Amal Tracker (UPDATED with actual image) -->
-                <div class="col-md-6 col-lg-4"><div class="project-card"><img src="image/solat.png" alt="Amal Tracker" loading="lazy" /><div class="project-body"><span class="badge-tech">Flutter + SQLite</span><h5>Amal Tracker (Spiritual)</h5><p class="text-muted small">Track daily worship, prayers, Quran with audio feedback & scheduling.</p><div class="mt-auto d-flex flex-wrap gap-2"><a href="https://github.com/gazirifatahmed/amal-tracker-app.git" class="btn-code btn btn-sm" target="_blank"><i class="fab fa-github"></i> Code</a></div></div></div></div>
-                <!-- 9: Weatherly -->
-                <div class="col-md-6 col-lg-4"><div class="project-card"><img src="https://placehold.co/600x400/0f172a/38bdf8?text=Weatherly" alt="Weatherly" loading="lazy" style="background:#0f172a;"/><div class="project-body"><span class="badge-tech">Flutter</span><h5>Weatherly: Real-Time Forecast</h5><p class="text-muted small">Instant weather updates, accurate forecasts, beautiful UI.</p><div class="mt-auto d-flex flex-wrap gap-2"><a href="https://github.com/gazirifatahmed/weather-forecast.git" class="btn-code btn btn-sm" target="_blank"><i class="fab fa-github"></i> Code</a></div></div></div></div>
-                <!-- 10: Focus Tracker -->
-                <div class="col-md-6 col-lg-4"><div class="project-card"><img src="image/habit.png" alt="Focus Tracker" loading="lazy" /><div class="project-body"><span class="badge-tech">Flutter</span><h5>Focus Tracker - NoFap</h5><p class="text-muted small">Streak tracking, badges & daily motivation.</p><div class="mt-auto d-flex flex-wrap gap-2"><a href="https://play.google.com/store/apps/details?id=com.rifat.focus_track" class="btn-playstore btn btn-sm" target="_blank"><i class="fab fa-google-play"></i> Play Store</a><a href="https://github.com/gazirifatahmed/focus-tracker" class="btn-code btn btn-sm" target="_blank"><i class="fab fa-github"></i> Code</a></div></div></div></div>
-                <!-- 11: Tasbih Pro -->
-                <div class="col-md-6 col-lg-4"><div class="project-card"><img src="image/tasbi image.png" alt="Tasbih Pro" loading="lazy" /><div class="project-body"><span class="badge-tech">Flutter</span><h5>Tasbih Pro: Digital Counter</h5><p class="text-muted small">Offline tasbih counter with elegant themes, audio & charts.</p><div class="mt-auto d-flex flex-wrap gap-2"><a href="https://play.google.com/store/apps/details?id=com.rifat.tasbihpro" class="btn-playstore btn btn-sm" target="_blank"><i class="fab fa-google-play"></i> Play Store</a><a href="https://github.com/gazirifatahmed/tasbih-pro" class="btn-code btn btn-sm" target="_blank"><i class="fab fa-github"></i> Code</a></div></div></div></div>
-                <!-- 12: LoopChat (UPDATED with actual image) -->
-                <div class="col-md-6 col-lg-4"><div class="project-card"><img src="image/Chat box.png" alt="LoopChat" loading="lazy" /><div class="project-body"><span class="badge-tech">Flutter + Supabase + ZEGO</span><h5>LoopChat – Real-Time Chat & Video</h5><p class="text-muted small">Secure messaging, crystal-clear video calls, media sharing & themes.</p><div class="mt-auto d-flex flex-wrap gap-2"><a href="https://play.google.com/store/apps/details?id=com.loopchat.messenger" class="btn-playstore btn btn-sm" target="_blank"><i class="fab fa-google-play"></i> Play Store</a><a href="https://github.com/gazirifatahmed/loopchat" class="btn-code btn btn-sm" target="_blank"><i class="fab fa-github"></i> Code</a></div></div></div></div>
+                <!-- 1: Focus Tracker -->
+                <div class="col-md-6 col-lg-4"><div class="project-card"><img src="image/habit.png" alt="Focus Tracker" loading="lazy" /><div class="project-body"><span class="badge-tech">Flutter + Provider</span><h5>Focus Tracker - NoFap</h5><p class="text-muted small">Streak tracking, badges, daily motivation & habit analytics. Stay disciplined with smart reminders.</p><div class="mt-auto d-flex flex-wrap gap-2"><a href="https://play.google.com/store/apps/details?id=com.rifat.focus_track" class="btn-playstore btn btn-sm" target="_blank"><i class="fab fa-google-play"></i> Play Store</a><a href="https://github.com/gazirifatahmed/focus-tracker" class="btn-code btn btn-sm" target="_blank"><i class="fab fa-github"></i> Code</a></div></div></div></div>
+                <!-- 2: Tasbih Pro -->
+                <div class="col-md-6 col-lg-4"><div class="project-card"><img src="image/tasbi image.png" alt="Tasbih Pro" loading="lazy" /><div class="project-body"><span class="badge-tech">Flutter + BLoC</span><h5>Tasbih Pro: Digital Counter</h5><p class="text-muted small">Premium offline Tasbih counter with elegant themes, audio feedback, and progress charts.</p><div class="mt-auto d-flex flex-wrap gap-2"><a href="https://play.google.com/store/apps/details?id=com.rifat.tasbihpro" class="btn-playstore btn btn-sm" target="_blank"><i class="fab fa-google-play"></i> Play Store</a><a href="https://github.com/gazirifatahmed/tasbih-pro" class="btn-code btn btn-sm" target="_blank"><i class="fab fa-github"></i> Code</a></div></div></div></div>
+                <!-- 3: Weatherly with Weather SVG -->
+                <div class="col-md-6 col-lg-4"><div class="project-card"><div class="weather-svg" style="height:200px; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg, #0f2027, #203a43, #2c5364);"><i class="fas fa-cloud-sun" style="font-size: 4rem; color: #ffd700; text-shadow: 0 0 10px rgba(0,0,0,0.3);"></i><i class="fas fa-cloud-rain" style="font-size: 3rem; color: #87ceeb; margin-left: 15px;"></i></div><div class="project-body"><span class="badge-tech">Flutter + OpenWeather API</span><h5>Weatherly: Real-Time Forecast</h5><p class="text-muted small">Real-time weather forecast, 7-day prediction, beautiful animations & location-based updates.</p><div class="mt-auto d-flex flex-wrap gap-2"><a href="https://github.com/gazirifatahmed/weather-forecast.git" class="btn-code btn btn-sm" target="_blank"><i class="fab fa-github"></i> Code</a></div></div></div></div>
+                <!-- 4: LoopChat -->
+                <div class="col-md-6 col-lg-4"><div class="project-card"><img src="image/Chat box.png" alt="LoopChat" loading="lazy" /><div class="project-body"><span class="badge-tech">Flutter + Supabase + ZEGO</span><h5>LoopChat – Secure Chat & Video</h5><p class="text-muted small">Real-time messaging, crystal-clear ZEGO video calls, secure media sharing, and dark/light themes.</p><div class="mt-auto d-flex flex-wrap gap-2"><a href="https://play.google.com/store/apps/details?id=com.loopchat.messenger" class="btn-playstore btn btn-sm" target="_blank"><i class="fab fa-google-play"></i> Play Store</a><a href="https://github.com/gazirifatahmed/loopchat" class="btn-code btn btn-sm" target="_blank"><i class="fab fa-github"></i> Code</a></div></div></div></div>
+                <!-- 5: SalatPro -->
+                <div class="col-md-6 col-lg-4"><div class="project-card"><img src="image/solat.png" alt="SalatPro" loading="lazy" /><div class="project-body"><span class="badge-tech">Flutter + MVVM + REST API</span><h5>SalatPro – Prayer Guide</h5><p class="text-muted small">Complete Salat guide, accurate prayer times, Qibla direction, and notifications based on Sahih Hadith.</p><div class="mt-auto d-flex flex-wrap gap-2"><a href="https://github.com/gazirifatahmed/sifatus_salah_app" class="btn-code btn btn-sm" target="_blank"><i class="fab fa-github"></i> Code</a><a href="https://github.com/gazirifatahmed/sifatus_salah_app/releases/download/v1.0.0/app-release.apk" class="btn-apk btn btn-sm" target="_blank"><i class="fas fa-download"></i> APK</a></div></div></div></div>
+                <!-- 6: CalcRate with Calculator SVG -->
+                <div class="col-md-6 col-lg-4"><div class="project-card"><div class="calc-svg" style="height:200px; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg, #1e293b, #0f172a);"><i class="fas fa-calculator" style="font-size: 4rem; color: #fbbf24;"></i><i class="fas fa-dollar-sign" style="font-size: 3rem; color: #10b981; margin-left: 15px;"></i></div><div class="project-body"><span class="badge-tech">Flutter + MVVM</span><h5>CalcRate – Currency Converter</h5><p class="text-muted small">Convert USD to BDT/INR/EUR instantly. Smart calculator with night mode & sound feedback. 100% offline ready.</p><div class="mt-auto d-flex flex-wrap gap-2"><a href="https://github.com/gazirifatahmed/CalcRate" class="btn-code btn-sm" target="_blank"><i class="fab fa-github"></i> Code</a></div></div></div></div>
+                <!-- 7: QuickBrew -->
+                <div class="col-md-6 col-lg-4"><div class="project-card"><img src="image/Coffeshop.png" alt="QuickBrew" loading="lazy" /><div class="project-body"><span class="badge-tech">Flutter + Firebase (Provider)</span><h5>QuickBrew</h5><p class="text-muted small">Flash coffee ordering with real-time cart, discount coupons, and order tracking.</p><div class="mt-auto d-flex flex-wrap gap-2"><a href="https://github.com/gazirifatahmed/coffee_ordering_system" class="btn-code btn btn-sm" target="_blank"><i class="fab fa-github"></i> Code</a></div></div></div></div>
+                <!-- 8: Amal Tracker -->
+                <div class="col-md-6 col-lg-4"><div class="project-card"><div class="calc-svg" style="height:200px; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg, #2d3748, #1a202c);"><i class="fas fa-heart" style="font-size: 4rem; color: #f687b3;"></i><i class="fas fa-star-and-crescent" style="font-size: 3rem; color: #fbbf24; margin-left: 15px;"></i></div><div class="project-body"><span class="badge-tech">Flutter + SQLite (Bloc)</span><h5>Amal Tracker (Spiritual)</h5><p class="text-muted small">Daily worship tracker, Quran recitation logging, audio feedback, and customizable task scheduling.</p><div class="mt-auto d-flex flex-wrap gap-2"><a href="https://github.com/gazirifatahmed/amal-tracker-app.git" class="btn-code btn btn-sm" target="_blank"><i class="fab fa-github"></i> Code</a></div></div></div></div>
+                <!-- 9: BanglaReads -->
+                <div class="col-md-6 col-lg-4"><div class="project-card"><img src="image/Book.png" alt="BanglaReads" loading="lazy" /><div class="project-body"><span class="badge-tech">Flutter + Provider</span><h5>BanglaReads</h5><p class="text-muted small">Premium Bengali e-reader with classic literature collection and offline reading capability.</p><div class="mt-auto d-flex flex-wrap gap-2"><a href="https://github.com/gazirifatahmed/Book_Verse" class="btn-code btn btn-sm" target="_blank"><i class="fab fa-github"></i> Code</a></div></div></div></div>
+                <!-- 10: Smart Food Ordering -->
+                <div class="col-md-6 col-lg-4"><div class="project-card"><div class="calc-svg" style="height:200px; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg, #1e293b, #0f172a);"><i class="fas fa-utensils" style="font-size: 4rem; color: #f59e0b;"></i><i class="fas fa-mobile-alt" style="font-size: 3rem; color: #06b6d4; margin-left: 15px;"></i></div><div class="project-body"><span class="badge-tech">Flutter + Spring Boot + MySQL</span><h5>Smart Food Ordering</h5><p class="text-muted small">Full-stack real-time ordering system with JWT authentication and admin dashboard.</p><div class="mt-auto d-flex flex-wrap gap-2"><a href="https://github.com/gazirifatahmed/flutter_project.git" class="btn-code btn btn-sm" target="_blank"><i class="fab fa-github"></i> Code</a></div></div></div></div>
+                <!-- 11: Food Demo Online -->
+                <div class="col-md-6 col-lg-4"><div class="project-card"><img src="image/Coffeshop.png" alt="Food Demo" loading="lazy" /><div class="project-body"><span class="badge-tech">HTML/CSS/JS</span><h5>Food Demo Online</h5><p class="text-muted small">Interactive food ordering frontend with cart management and checkout simulation.</p><div class="mt-auto d-flex flex-wrap gap-2"><a href="https://gazirifatahmed.github.io/food-demo-online/" class="btn-demo btn btn-sm" target="_blank"><i class="fas fa-globe"></i> Live Demo</a><a href="https://github.com/gazirifatahmed/food-demo-online" class="btn-code btn btn-sm" target="_blank"><i class="fab fa-github"></i> Code</a></div></div></div></div>
+                <!-- 12: FoodNest Android -->
+                <div class="col-md-6 col-lg-4"><div class="project-card"><img src="image/foodorderandroidstudio.png" alt="FoodNest" loading="lazy" /><div class="project-body"><span class="badge-tech">Java + SQLite + XML</span><h5>FoodNest (Android)</h5><p class="text-muted small">Native food ordering app with cart management, SQLite database, and order history.</p><div class="mt-auto d-flex flex-wrap gap-2"><a href="https://github.com/gazirifatahmed/android-food-ordering-sqlite" class="btn-code btn btn-sm" target="_blank"><i class="fab fa-github"></i> Code</a></div></div></div></div>
+                <!-- 13: Sifatus Salah -->
+                <div class="col-md-6 col-lg-4"><div class="project-card"><img src="image/solat.png" alt="Sifatus Salah" loading="lazy" /><div class="project-body"><span class="badge-tech">Flutter + REST API</span><h5>Sifatus Salah</h5><p class="text-muted small">Accurate prayer times with modern UI, adhan alerts, and location-based detection.</p><div class="mt-auto d-flex flex-wrap gap-2"><a href="https://github.com/gazirifatahmed/sifatus_salah_app" class="btn-code btn btn-sm" target="_blank"><i class="fab fa-github"></i> Code</a><a href="https://github.com/gazirifatahmed/sifatus_salah_app/releases/download/v1.0.0/app-release.apk" class="btn-apk btn btn-sm" target="_blank"><i class="fas fa-download"></i> APK</a></div></div></div></div>
             </div>
         </div>
     </section>
@@ -530,4 +548,3 @@ Here is the fully updated HTML code for your portfolio. I have replaced the dumm
 
 </body>
 </html>
-```
